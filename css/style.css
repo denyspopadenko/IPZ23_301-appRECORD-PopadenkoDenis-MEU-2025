@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #ffffff;
+  color: #222;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 80px;
+  background-color: #0923f0; /* синій фон */
+  color: #fff; /* білий текст */
+}
+
+.uni-logo img {
+  width: 250px; /* у 3 рази більше (було 60px) */
+  height: 250px;
+  object-fit: contain;
+}
+
+.header-content {
+  text-align: center;
+  flex-grow: 1;
+  color: #fff;
+}
+
+.header-content h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header-space {
+  height: 20px; /* відступ між h1 та нижнім текстом */
+}
+
+.header-content h2,
+.header-content h3 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 10px 0 5px;
+}
+
+.header-content h3 span {
+  font-weight: 800;
+}
+
+.student-info {
+  font-size: 16px;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+.header-photo img {
+  width: 210px;
+  height: 210px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ===== NAVIGATION ===== */
+.labs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 25px;
+  background-color: white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.lab-btn {
+  text-decoration: none;
+  color: #0923f0; /* синій текст */
+  background-color: #ffffff; /* білі кнопки */
+  border: 2px solid #0923f0; /* синя обводка */
+  padding: 12px 24px;
+  border-radius: 8px;
+  margin: 10px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.lab-btn:hover {
+  background-color: #0923f0;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 28, 125, 0.3);
+}
+
+/* ===== LAB CONTENT ===== */
+.lab-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  background-color: #ffffff;
+  min-height: 70vh;
+}
+
+.lab-box {
+  background-color: #ffffff;
+  border: 2px solid #0923f0;
+  border-radius: 12px;
+  padding: 40px 50px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 28, 125, 0.2);
+  text-align: center;
+}
+
+.lab-box h2 {
+  color: #0923f0;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.lab-box p {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Активна кнопка */
+.lab-btn.active {
+  background-color: #0923f0;
+  color: #fff;
+}
+
+.lab-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s; /* плавна зміна кольору */
+}
+
+.lab-link:hover {
+    color: #ffd700; /* можна вибрати будь-який колір підсвічування */
+}
