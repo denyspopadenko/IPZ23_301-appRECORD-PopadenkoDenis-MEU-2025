@@ -139,3 +139,13 @@ body {
 .lab-link:hover {
     color: #ffd700; /* можна вибрати будь-який колір підсвічування */
 }
+
+.lab-link2 {
+    color: #0923f0;
+    text-decoration: none;
+    transition: color 0.3s; /* плавна зміна кольору */
+}
+
+.lab-link2:hover {
+    color: #ffd700; /* можна вибрати будь-який колір підсвічування */
+}
