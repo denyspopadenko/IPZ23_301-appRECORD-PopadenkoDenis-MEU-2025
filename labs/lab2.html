@@ -63,151 +63,196 @@
 
       <div id="section2" class="lab-section">
         <h2>Селектори тегу</h2>
-        <p>Селектори тегу використовуються для вибору елементів за їх тегом.</p>
+        <p>Найпростіший тип селекторів, який застосовує стилі до всіх елементів із вказаним HTML-тегом.</p>
+        
         <div class="code-container">
           <pre><code class="language-css">
-/* Селектор тегу для всіх параграфів */
-p {
-  color: blue;
-  font-size: 16px;
-}
-
-/* Селектор тегу для всіх заголовків h1 */
+/* Всі заголовки h1 стануть червоними */
 h1 {
   color: red;
   font-weight: bold;
 }
+
+/* Всі параграфи стануть синіми */
+p {
+  color: blue;
+  font-size: 16px;
+}
           </code></pre>
+        </div>
+
+        <h3>Результат:</h3>
+        <div style="border: 1px solid #ccc; padding: 20px; border-radius: 8px; background: #fff;">
+            <h1 style="color: red; font-weight: bold; margin: 0 0 10px 0; font-size: 2em;">Заголовок H1</h1>
+            <p style="color: blue; font-size: 16px; margin: 0;">Це звичайний параграф тексту (тег p), який став синім.</p>
         </div>
       </div>
 
       <div id="section3" class="lab-section">
         <h2>Селектори класу</h2>
-        <p>Селектори класу використовуються для вибору елементів з певним класом.</p>
+        <p>Дозволяють стилізувати незалежні елементи, яким присвоєно атрибут <code>class</code>. Позначаються крапкою (<code>.classname</code>).</p>
+        
         <div class="code-container">
           <pre><code class="language-css">
-/* Селектор класу для елементів з класом "highlight" */
+/* Клас для виділення тексту */
 .highlight {
   background-color: yellow;
   padding: 10px;
+  border-radius: 4px;
 }
 
-/* Селектор класу для кнопок з класом "btn" */
+/* Клас для кнопки */
 .btn {
   background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
           </code></pre>
+        </div>
+
+        <h3>Результат:</h3>
+        <div style="border: 1px solid #ccc; padding: 20px; border-radius: 8px; background: #fff;">
+            <p>Звичайний текст, а це <span style="background-color: yellow; padding: 10px; border-radius: 4px;">текст з класом .highlight</span></p>
+            <br>
+            <button style="background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Кнопка з класом .btn</button>
         </div>
       </div>
 
       <div id="section4" class="lab-section">
         <h2>Селектори ідентифікатора</h2>
-        <p>Селектори ідентифікатора використовуються для вибору елемента з унікальним ID.</p>
+        <p>Використовуються для унікальних елементів (наприклад, шапка сайту або головне меню). Позначаються решіткою (<code>#idname</code>).</p>
+        
         <div class="code-container">
           <pre><code class="language-css">
-/* Селектор ідентифікатора для елемента з id "header" */
-#header {
+/* Стилі для шапки з id="header-demo" */
+#header-demo {
   background-color: #333;
   color: white;
-  padding: 20px;
+  padding: 15px;
+  text-align: center;
 }
 
-/* Селектор ідентифікатора для елемента з id "main-content" */
-#main-content {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Стилі для контенту з id="content-demo" */
+#content-demo {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border: 1px solid #ddd;
 }
           </code></pre>
+        </div>
+
+        <h3>Результат:</h3>
+        <div style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+            <div style="background-color: #333; color: white; padding: 15px; text-align: center;">
+                Це блок з id="header-demo"
+            </div>
+            <div style="background-color: #f4f4f4; padding: 20px; border-top: 1px solid #ddd; color: #333;">
+                Це блок з id="content-demo". Він має сірий фон.
+            </div>
         </div>
       </div>
 
       <div id="section5" class="lab-section">
         <h2>Інші селектори</h2>
-        <p>Існують також інші типи селекторів, такі як дочірні, сусідні, атрибутні тощо.</p>
+        <p>CSS дозволяє вибирати елементи за їх атрибутами, станом або відношенням до інших елементів.</p>
+        
         <div class="code-container">
           <pre><code class="language-css">
-/* Дочірні селектори */
-ul > li {
+/* 1. Дочірній селектор (ul > li) - прямі нащадки */
+ul.demo-list > li {
   list-style-type: square;
+  color: darkgreen;
 }
 
-/* Сусідні селектори */
-h2 + p {
-  margin-top: 0;
-}
-
-/* Селектори атрибутів */
+/* 2. Селектор атрибута (input[type="text"]) */
 input[type="text"] {
-  border: 1px solid #ccc;
+  border: 2px solid #007bff;
+  padding: 5px;
 }
 
-/* Псевдокласи */
-a:hover {
-  color: red;
-  text-decoration: underline;
+/* 3. Сусідній селектор (h4 + p) - параграф одразу після заголовка */
+h4 + p {
+  font-style: italic;
+  color: gray;
 }
           </code></pre>
+        </div>
+
+        <h3>Результат:</h3>
+        <div style="border: 1px solid #ccc; padding: 20px; border-radius: 8px; background: #fff;">
+            <strong>Список (ul > li):</strong>
+            <ul style="margin-top: 5px;">
+                <li style="list-style-type: square; color: darkgreen;">Елемент списку 1</li>
+                <li style="list-style-type: square; color: darkgreen;">Елемент списку 2</li>
+            </ul>
+            
+            <hr style="margin: 15px 0; border: 0; border-top: 1px solid #eee;">
+            
+            <strong>Поле вводу (input[type="text"]):</strong><br>
+            <input type="text" value="Текстове поле" style="border: 2px solid #007bff; padding: 5px; margin-top: 5px;">
+            
+            <hr style="margin: 15px 0; border: 0; border-top: 1px solid #eee;">
+            
+            <h4>Це заголовок h4</h4>
+            <p style="font-style: italic; color: gray; margin-top: 5px;">Це параграф одразу після h4 (h4 + p). Він став сірим і курсивом.</p>
         </div>
       </div>
 
       <div id="section6" class="lab-section">
-        <h2>CSS: Шрифти, текст, таблиці, фон, контур, списки</h2>
-        <p>Робота з основними CSS властивостями для стилізації веб-сторінок.</p>
+        <h2>CSS: Шрифти, текст, таблиці, фон</h2>
+        <p>Демонстрація комплексного використання CSS властивостей для оформлення контенту.</p>
+        
         <div class="code-container">
           <pre><code class="language-css">
-/* Шрифти та текст */
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
+.custom-card {
+  font-family: 'Verdana', sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
 }
 
-h1 {
-  font-size: 2.5rem;
-  text-align: center;
+.custom-card h3 {
   text-transform: uppercase;
+  text-align: center;
+  color: #555;
+  text-shadow: 1px 1px 2px #aaa;
 }
 
-/* Таблиці */
-table {
+.custom-table {
   width: 100%;
   border-collapse: collapse;
+  background: white;
 }
 
-th, td {
+.custom-table td {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: left;
-}
-
-/* Фон */
-.header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-size: cover;
-}
-
-/* Контур */
-.button {
-  border: 2px solid #007bff;
-  border-radius: 5px;
-  outline: none;
-}
-
-/* Списки */
-ul {
-  list-style-type: circle;
-  padding-left: 20px;
-}
-
-ol {
-  list-style-type: decimal;
-  padding-left: 20px;
 }
           </code></pre>
+        </div>
+
+        <h3>Результат:</h3>
+        <div style="font-family: 'Verdana', sans-serif; background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); border: 1px solid #ccc; padding: 20px; border-radius: 10px;">
+            <h3 style="text-transform: uppercase; text-align: center; color: #555; text-shadow: 1px 1px 2px #aaa; margin-top: 0;">Картка товару</h3>
+            
+            <table style="width: 100%; border-collapse: collapse; background: white;">
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Назва</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Суші сет</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Ціна</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">450 грн</td>
+                </tr>
+            </table>
+            
+            <p style="text-align: justify; line-height: 1.6; color: #333; margin-bottom: 0;">
+                Це приклад блоку, стилізованого за допомогою фону, шрифтів та таблиці.
+            </p>
         </div>
       </div>
 
