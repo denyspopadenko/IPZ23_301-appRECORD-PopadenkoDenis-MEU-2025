@@ -161,49 +161,177 @@
 </div>
 
       <div id="section4" class="lab-section">
-        <h2>HTML-код таблиць</h2>
+        <h2>HTML-код таблиці (Прайс-лист AsiaBox)</h2>
+        <p>Приклад таблиці з переліком популярних товарів магазину AsiaBox. Використано семантичні теги та стилізацію для кращого сприйняття цін.</p>
+        
         <div class="code-container">
           <pre><code class="language-html">
-&lt;!-- Приклад таблиці --&gt;
-&lt;table border="1"&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Заголовок 1&lt;/th&gt;
-    &lt;th&gt;Заголовок 2&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Дані 1&lt;/td&gt;
-    &lt;td&gt;Дані 2&lt;/td&gt;
-  &lt;/tr&gt;
+&lt;table style="width: 100%; border-collapse: collapse; font-family: sans-serif;"&gt;
+  &lt;caption style="margin-bottom: 10px; font-weight: bold; color: #d63384;"&gt;Топ продажів AsiaBox&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr style="background-color: #6f42c1; color: white;"&gt;
+      &lt;th style="padding: 10px; border: 1px solid #ddd;"&gt;Товар&lt;/th&gt;
+      &lt;th style="padding: 10px; border: 1px solid #ddd;"&gt;Категорія&lt;/th&gt;
+      &lt;th style="padding: 10px; border: 1px solid #ddd;"&gt;Ціна&lt;/th&gt;
+      &lt;th style="padding: 10px; border: 1px solid #ddd;"&gt;Наявність&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style="padding: 8px; border: 1px solid #ddd;"&gt;Ramen Buldak (Spicy)&lt;/td&gt;
+      &lt;td style="padding: 8px; border: 1px solid #ddd;"&gt;Локшина&lt;/td&gt;
+      &lt;td style="padding: 8px; border: 1px solid #ddd;"&gt;85 грн&lt;/td&gt;
+      &lt;td style="padding: 8px; border: 1px solid #ddd; color: green;"&gt;✓ Є&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style="background-color: #f9f9f9;"&gt;
+      &lt;td style="padding: 8px; border: 1px solid #ddd;"&gt;Mochi (Matcha)&lt;/td&gt;
+      &lt;td style="padding: 8px; border: 1px solid #ddd;"&gt;Солодощі&lt;/td&gt;
+      &lt;td style="padding: 8px; border: 1px solid #ddd;"&gt;120 грн&lt;/td&gt;
+      &lt;td style="padding: 8px; border: 1px solid #ddd; color: green;"&gt;✓ Є&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="padding: 8px; border: 1px solid #ddd;"&gt;Pocky Strawberry&lt;/td&gt;
+      &lt;td style="padding: 8px; border: 1px solid #ddd;"&gt;Снеки&lt;/td&gt;
+      &lt;td style="padding: 8px; border: 1px solid #ddd;"&gt;60 грн&lt;/td&gt;
+      &lt;td style="padding: 8px; border: 1px solid #ddd; color: red;"&gt;Очікується&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
           </code></pre>
+        </div>
+
+        <h3>Результат відображення:</h3>
+        <div style="padding: 15px; border: 1px solid #ccc; background: #fff;">
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; color: #333;">
+              <caption style="margin-bottom: 10px; font-weight: bold; color: #d63384;">Топ продажів AsiaBox</caption>
+              <thead>
+                <tr style="background-color: #6f42c1; color: white;">
+                  <th style="padding: 10px; border: 1px solid #ddd;">Товар</th>
+                  <th style="padding: 10px; border: 1px solid #ddd;">Категорія</th>
+                  <th style="padding: 10px; border: 1px solid #ddd;">Ціна</th>
+                  <th style="padding: 10px; border: 1px solid #ddd;">Наявність</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 8px; border: 1px solid #ddd;">Ramen Buldak (Spicy)</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">Локшина</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">85 грн</td>
+                  <td style="padding: 8px; border: 1px solid #ddd; color: green;">✓ Є</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td style="padding: 8px; border: 1px solid #ddd;">Mochi (Matcha)</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">Солодощі</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">120 грн</td>
+                  <td style="padding: 8px; border: 1px solid #ddd; color: green;">✓ Є</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px; border: 1px solid #ddd;">Pocky Strawberry</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">Снеки</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">60 грн</td>
+                  <td style="padding: 8px; border: 1px solid #ddd; color: red;">Очікується</td>
+                </tr>
+              </tbody>
+            </table>
         </div>
       </div>
 
       <div id="section5" class="lab-section">
-        <h2>HTML-код форми</h2>
+        <h2>HTML-код форми (Замовлення боксу)</h2>
+        <p>Приклад форми для швидкого замовлення азійського боксу.</p>
+        
         <div class="code-container">
           <pre><code class="language-html">
-&lt;!-- Приклад форми --&gt;
-&lt;form action="/submit" method="post"&gt;
-  &lt;label for="name"&gt;Ім'я:&lt;/label&gt;
-  &lt;input type="text" id="name" name="name"&gt;
-  &lt;br&gt;
-  &lt;label for="email"&gt;Email:&lt;/label&gt;
-  &lt;input type="email" id="email" name="email"&gt;
-  &lt;br&gt;
-  &lt;input type="submit" value="Надіслати"&gt;
+&lt;form style="max-width: 400px; padding: 20px; border: 2px solid #6f42c1; border-radius: 10px;"&gt;
+  &lt;h3 style="color: #6f42c1; text-align: center;"&gt;Замовити AsiaBox&lt;/h3&gt;
+  
+  &lt;div style="margin-bottom: 15px;"&gt;
+    &lt;label style="display: block; font-weight: bold;"&gt;Оберіть ваш бокс:&lt;/label&gt;
+    &lt;select style="width: 100%; padding: 8px;"&gt;
+        &lt;option&gt;Starter Pack (300 грн)&lt;/option&gt;
+        &lt;option&gt;Spicy Lover (500 грн)&lt;/option&gt;
+        &lt;option&gt;Sweet Dream (450 грн)&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+
+  &lt;div style="margin-bottom: 15px;"&gt;
+    &lt;label style="display: block; font-weight: bold;"&gt;Ваш телефон:&lt;/label&gt;
+    &lt;input type="tel" placeholder="+380..." style="width: 100%; padding: 8px; box-sizing: border-box;"&gt;
+  &lt;/div&gt;
+
+  &lt;div style="margin-bottom: 15px;"&gt;
+    &lt;label style="display: block; font-weight: bold;"&gt;Коментар до замовлення:&lt;/label&gt;
+    &lt;textarea rows="3" style="width: 100%; box-sizing: border-box;"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+
+  &lt;button type="button" style="width: 100%; padding: 10px; background: #d63384; color: white; border: none; border-radius: 5px; cursor: pointer;"&gt;Оформити замовлення&lt;/button&gt;
 &lt;/form&gt;
           </code></pre>
+        </div>
+
+        <h3>Результат відображення:</h3>
+        <div style="padding: 20px; border: 1px solid #ccc; background: #fff; color: #333;">
+            <form style="max-width: 400px; margin: 0 auto; padding: 20px; border: 2px solid #6f42c1; border-radius: 10px; background: #fff;">
+              <h3 style="color: #6f42c1; text-align: center; margin-top: 0;">Замовити AsiaBox</h3>
+              
+              <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Оберіть ваш бокс:</label>
+                <select style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    <option>Starter Pack (300 грн)</option>
+                    <option>Spicy Lover (500 грн)</option>
+                    <option>Sweet Dream (450 грн)</option>
+                </select>
+              </div>
+
+              <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Ваш телефон:</label>
+                <input type="tel" placeholder="+380..." style="width: 95%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+              </div>
+
+              <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Коментар до замовлення:</label>
+                <textarea rows="3" style="width: 95%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+              </div>
+
+              <button type="button" style="width: 100%; padding: 10px; background: #d63384; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Оформити замовлення</button>
+            </form>
         </div>
       </div>
 
       <div id="section6" class="lab-section">
-        <h2>HTML-код зображення</h2>
+        <h2>HTML-код зображення (Товар)</h2>
+        <p>Приклад розміщення картки товару із зображенням азійських смаколиків.</p>
+        
         <div class="code-container">
           <pre><code class="language-html">
-&lt;!-- Приклад зображення --&gt;
-&lt;img src="image.jpg" alt="Опис зображення" width="300" height="200"&gt;
+&lt;figure style="border: 1px solid #ddd; padding: 10px; display: inline-block; border-radius: 8px; background: #fff;"&gt;
+  &lt;!-- Використання локального зображення --&gt;
+  &lt;img 
+    src="../img/mysterybox.png" 
+    alt="Mystery Box Japan - набір азійських снеків" 
+    style="border-radius: 5px; width: 300px; height: auto; object-fit: cover;"
+  &gt;
+  &lt;figcaption style="text-align: center; margin-top: 10px;"&gt;
+    &lt;strong&gt;Mystery Box "Japan"&lt;/strong&gt;&lt;br&gt;
+    &lt;span style="color: #d63384;"&gt;Лімітована серія&lt;/span&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
           </code></pre>
+        </div>
+
+        <h3>Результат відображення:</h3>
+        <div style="padding: 20px; border: 1px solid #ccc; background: #fff; text-align: center;">
+            <figure style="border: 1px solid #ddd; padding: 15px; display: inline-block; border-radius: 8px; background: #fff; margin: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+              <img 
+                src="../img/mysterybox.png" 
+                alt="Mystery Box Japan - набір азійських снеків" 
+                style="border-radius: 5px; width: 300px; height: auto; object-fit: cover;"
+              >
+              <figcaption style="text-align: center; margin-top: 10px;">
+                <strong style="font-size: 18px;">Mystery Box "Japan"</strong><br>
+                <span style="color: #d63384; font-weight: bold;">Лімітована серія</span>
+              </figcaption>
+            </figure>
         </div>
       </div>
 
