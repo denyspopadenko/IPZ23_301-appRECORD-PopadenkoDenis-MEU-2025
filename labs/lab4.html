@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лабораторна робота №1 — Попаденко Денис</title>
+  <title>Лабораторна робота №4 — Попаденко Денис</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../main.js"></script>
 </head>
 <body>
   <header class="header">
     <a href="https://ieu.edu.ua/" class="uni-logo">
       <img src="../img/univer.jpg" alt="Логотип університету">
     </a>
-
     <div class="header-content">
       <h1>Міжнародний Європейський Університет</h1>
       <div class="header-space"></div>
@@ -22,13 +22,11 @@
         <strong>Група:</strong> ІПЗ-23-301
       </p>
     </div>
-
     <div class="header-photo">
       <img src="../img/me.jpg" alt="Фото студента">
     </div>
   </header>
 
-  <!-- Навігація по лабораторних -->
   <nav class="labs">
     <a href="./lab1.html" class="lab-btn">Лабораторна робота №1</a>
     <a href="./lab2.html" class="lab-btn">Лабораторна робота №2</a>
@@ -36,24 +34,57 @@
     <a href="./lab4.html" class="lab-btn active">Лабораторна робота №4</a>
     <a href="./lab5.html" class="lab-btn">Лабораторна робота №5</a>
     <a href="./lab6.html" class="lab-btn">Лабораторна робота №6</a>
-    
   </nav>
 
-  <!-- Основний контент лабораторної -->
-  <main class="lab-content">
-    <div class="lab-box">
-      <h2>Лабораторна робота №4</h2>
-      <h3>ТЕМА:  АДАПТИВНА ВЕРСТКА. МЕДІА-ЗАПИТИ. МЕТАТЕГ VIEWPORT.</h3>
+  <main class="lab-main">
+    <aside class="lab-menu">
+      <button class="lab-item active" data-target="section1">Тема, мета та місце розташування</button>
+      <button class="lab-item" data-target="section2">Адаптивна верстка</button>
+      <div class="code-buttons">
+        <button class="lab-subitem" data-target="section3">Десктопна версія</button>
+        <button class="lab-subitem" data-target="section4">Планшетна версія</button>
+        <button class="lab-subitem" data-target="section5">Мобільна версія</button>
+      </div>
+      <button class="lab-item" data-target="section6">Висновки</button>
+    </aside>
 
-      <h3>МЕТА: Адаптивна верстка. Медіа-запити. Медіа-типи. Медіа-функції.Метатег viewport. Інструменти розробника. Стратегія Mobile First. </h3>
-<p> </p>
-<h3><a href="https://github.com/denyspopadenko/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій  власного WEB-застосунку</a></h3>
-<h3><a href="https://denyspopadenko.github.io/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на репозиторій на живу сторінку  власного WEB-Застосунку</a></h3>
-<p> </p>
-<h3><a href="https://github.com/denyspopadenko/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій звітного HTML-документа</a></h3>
-<h3><a href="https://denyspopadenko.github.io/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на репозиторій на  живу сторінку  звітного HTML-документа</a></h3>
+    <section class="lab-display">
+      <div id="section1" class="lab-section active">
+        <h2>Тема, мета та місце розташування</h2>
+        <p><strong>ТЕМА:</strong> Адаптивна верстка. Медіа-запити.</p>
+        <p><strong>МЕТА:</strong> Придбати практичні навички роботи з адаптивною версткою.</p>
+        <h3><a href="https://github.com/denyspopadenko/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій веб-застосунку</a></h3>
+        <h3><a href="https://denyspopadenko.github.io/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на живу сторінку застосунку</a></h3>
+        <h3><a href="https://github.com/denyspopadenko/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій звітного HTML-документа</a></h3>
+        <h3><a href="https://denyspopadenko.github.io/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на репозиторій на живу сторінку звітного HTML-документа</a></h3>
+      </div>
 
-    </div>
+      <div id="section2" class="lab-section">
+        <h2>Адаптивна верстка</h2>
+        <p>Тут буде інформація про адаптивну верстку.</p>
+      </div>
+
+      <div id="section3" class="lab-section">
+        <h2>Десктопна версія</h2>
+        <p>Тут буде інформація про десктопну версію.</p>
+      </div>
+
+      <div id="section4" class="lab-section">
+        <h2>Планшетна версія</h2>
+        <p>Тут буде інформація про планшетну версію.</p>
+      </div>
+
+      <div id="section5" class="lab-section">
+        <h2>Мобільна версія</h2>
+        <p>Тут буде інформація про мобільну версію.</p>
+      </div>
+
+      <div id="section6" class="lab-section">
+        <h2>Висновки</h2>
+        <p>Тут буде підсумок виконаної лабораторної роботи №4.</p>
+      </div>
+    </section>
   </main>
 </body>
 </html>
+

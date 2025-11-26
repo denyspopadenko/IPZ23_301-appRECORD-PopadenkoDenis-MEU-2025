@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лабораторна робота №1 — Попаденко Денис</title>
+  <title>Лабораторна робота №2 — Попаденко Денис</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../main.js"></script>
 </head>
 <body>
   <header class="header">
     <a href="https://ieu.edu.ua/" class="uni-logo">
       <img src="../img/univer.jpg" alt="Логотип університету">
     </a>
-
     <div class="header-content">
       <h1>Міжнародний Європейський Університет</h1>
       <div class="header-space"></div>
@@ -22,13 +22,11 @@
         <strong>Група:</strong> ІПЗ-23-301
       </p>
     </div>
-
     <div class="header-photo">
       <img src="../img/me.jpg" alt="Фото студента">
     </div>
   </header>
 
-  <!-- Навігація по лабораторних -->
   <nav class="labs">
     <a href="./lab1.html" class="lab-btn">Лабораторна робота №1</a>
     <a href="./lab2.html" class="lab-btn active">Лабораторна робота №2</a>
@@ -36,24 +34,200 @@
     <a href="./lab4.html" class="lab-btn">Лабораторна робота №4</a>
     <a href="./lab5.html" class="lab-btn">Лабораторна робота №5</a>
     <a href="./lab6.html" class="lab-btn">Лабораторна робота №6</a>
-    
   </nav>
 
-  <!-- Основний контент лабораторної -->
-  <main class="lab-content">
-    <div class="lab-box">
-      <h2>Лабораторна робота №2</h2>
-      <h3>ТЕМА: КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ .ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.</h3>
+  <main class="lab-main">
+    <aside class="lab-menu">
+      <button class="lab-item active" data-target="section1">Тема, мета та місце розташування</button>
+      <div class="code-buttons">
+        <button class="lab-subitem" data-target="section2">Селектори тегу</button>
+        <button class="lab-subitem" data-target="section3">Селектори класу</button>
+        <button class="lab-subitem" data-target="section4">Селектори ідентифікатора</button>
+        <button class="lab-subitem" data-target="section5">Інші селектори</button>
+      </div>
+      <button class="lab-item" data-target="section6">CSS: Шрифти, текст, таблиці, фон, контур, списки</button>
+      <button class="lab-item" data-target="section7">Висновки</button>
+      <button class="lab-item" data-target="section8">Контрольні запитання</button>
+    </aside>
 
-      <h3>МЕТА: придбати практичні навички роботи  з селекторами: тегів, класів, ідентифікаторів; списками,  різноманітними властивостями кольору і фону, оформленням текстових елементів</h3>
-<p> </p>
-<h3><a href="https://github.com/denyspopadenko/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій  власного WEB-застосунку</a></h3>
-<h3><a href="https://denyspopadenko.github.io/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на репозиторій на живу сторінку  власного WEB-Застосунку</a></h3>
-<p> </p>
-<h3><a href="https://github.com/denyspopadenko/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій звітного HTML-документа</a></h3>
-<h3><a href="https://denyspopadenko.github.io/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на репозиторій на  живу сторінку  звітного HTML-документа</a></h3>
+    <section class="lab-display">
+      <div id="section1" class="lab-section active">
+        <h2>Тема, мета та місце розташування</h2>
+        <p><strong>ТЕМА:</strong> Каскадні таблиці стилів. Селектори.</p>
+        <p><strong>МЕТА:</strong> Придбати практичні навички роботи з селекторами, ідентифікаторами, CSS.</p>
+        <h3><a href="https://github.com/denyspopadenko/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій веб-застосунку</a></h3>
+        <h3><a href="https://denyspopadenko.github.io/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на живу сторінку застосунку</a></h3>
+        <h3><a href="https://github.com/denyspopadenko/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій звітного HTML-документа</a></h3>
+        <h3><a href="https://denyspopadenko.github.io/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на репозиторій на живу сторінку звітного HTML-документа</a></h3>
+      </div>
 
-    </div>
+      <div id="section2" class="lab-section">
+        <h2>Селектори тегу</h2>
+        <p>Селектори тегу використовуються для вибору елементів за їх тегом.</p>
+        <div class="code-container">
+          <pre><code class="language-css">
+/* Селектор тегу для всіх параграфів */
+p {
+  color: blue;
+  font-size: 16px;
+}
+
+/* Селектор тегу для всіх заголовків h1 */
+h1 {
+  color: red;
+  font-weight: bold;
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div id="section3" class="lab-section">
+        <h2>Селектори класу</h2>
+        <p>Селектори класу використовуються для вибору елементів з певним класом.</p>
+        <div class="code-container">
+          <pre><code class="language-css">
+/* Селектор класу для елементів з класом "highlight" */
+.highlight {
+  background-color: yellow;
+  padding: 10px;
+}
+
+/* Селектор класу для кнопок з класом "btn" */
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div id="section4" class="lab-section">
+        <h2>Селектори ідентифікатора</h2>
+        <p>Селектори ідентифікатора використовуються для вибору елемента з унікальним ID.</p>
+        <div class="code-container">
+          <pre><code class="language-css">
+/* Селектор ідентифікатора для елемента з id "header" */
+#header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+/* Селектор ідентифікатора для елемента з id "main-content" */
+#main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div id="section5" class="lab-section">
+        <h2>Інші селектори</h2>
+        <p>Існують також інші типи селекторів, такі як дочірні, сусідні, атрибутні тощо.</p>
+        <div class="code-container">
+          <pre><code class="language-css">
+/* Дочірні селектори */
+ul > li {
+  list-style-type: square;
+}
+
+/* Сусідні селектори */
+h2 + p {
+  margin-top: 0;
+}
+
+/* Селектори атрибутів */
+input[type="text"] {
+  border: 1px solid #ccc;
+}
+
+/* Псевдокласи */
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div id="section6" class="lab-section">
+        <h2>CSS: Шрифти, текст, таблиці, фон, контур, списки</h2>
+        <p>Робота з основними CSS властивостями для стилізації веб-сторінок.</p>
+        <div class="code-container">
+          <pre><code class="language-css">
+/* Шрифти та текст */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Таблиці */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Фон */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-size: cover;
+}
+
+/* Контур */
+.button {
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Списки */
+ul {
+  list-style-type: circle;
+  padding-left: 20px;
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div id="section7" class="lab-section">
+        <h2>Висновки</h2>
+        <p>Під час виконання лабораторної роботи №2 було придбано практичні навички роботи з:</p>
+        <ul>
+          <li>Різними типами CSS селекторів (тегу, класу, ідентифікатора, атрибутів)</li>
+          <li>Властивостями для стилізації тексту та шрифтів</li>
+          <li>Роботою з таблицями, фоном, контурами та списками</li>
+          <li>Псевдокласами для створення інтерактивних ефектів</li>
+        </ul>
+        <p>Отримані знання дозволяють ефективно стилізувати веб-сторінки та створювати привабливий візуальний інтерфейс.</p>
+      </div>
+
+      <div id="section8" class="lab-section">
+        <h2>Контрольні запитання</h2>
+       
+      </div>
+    </section>
   </main>
 </body>
 </html>

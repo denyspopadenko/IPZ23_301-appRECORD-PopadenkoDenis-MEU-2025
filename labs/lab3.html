@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лабораторна робота №1 — Попаденко Денис</title>
+  <title>Лабораторна робота №3 — Попаденко Денис</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../main.js"></script>
 </head>
 <body>
   <header class="header">
     <a href="https://ieu.edu.ua/" class="uni-logo">
       <img src="../img/univer.jpg" alt="Логотип університету">
     </a>
-
     <div class="header-content">
       <h1>Міжнародний Європейський Університет</h1>
       <div class="header-space"></div>
@@ -22,13 +22,11 @@
         <strong>Група:</strong> ІПЗ-23-301
       </p>
     </div>
-
     <div class="header-photo">
       <img src="../img/me.jpg" alt="Фото студента">
     </div>
   </header>
 
-  <!-- Навігація по лабораторних -->
   <nav class="labs">
     <a href="./lab1.html" class="lab-btn">Лабораторна робота №1</a>
     <a href="./lab2.html" class="lab-btn">Лабораторна робота №2</a>
@@ -36,28 +34,100 @@
     <a href="./lab4.html" class="lab-btn">Лабораторна робота №4</a>
     <a href="./lab5.html" class="lab-btn">Лабораторна робота №5</a>
     <a href="./lab6.html" class="lab-btn">Лабораторна робота №6</a>
-    
   </nav>
 
-  <!-- Основний контент лабораторної -->
-  <main class="lab-content">
-    <div class="lab-box">
-      <h2>Лабораторна робота №3</h2>
-      <h3>ТЕМА: ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА.  ВЕРСТКА ЗАСОБАМИ CSS та FLEXBOX.</h3>
+  <main class="lab-main">
+    <aside class="lab-menu">
+      <button class="lab-item active" data-target="section1">Тема, мета та місце розташування</button>
+       <button class="lab-item" data-target="section2">ЗАВДАННЯ №1 Зовнішній вигляд макету. Код макету.</button>
+      <button class="lab-item" data-target="section3">ЗАВДАННЯ №2</button>
+      <div class="code-buttons">
+        <button class="lab-subitem" data-target="section4">Фіксована таблична верстка</button>
+        <button class="lab-subitem" data-target="section5">Гумова таблична верстка</button>
+        <button class="lab-subitem" data-target="section6">Фіксована блокова верстка</button>
+        <button class="lab-subitem" data-target="section7">Гумова блокова верстка</button>
+      </div>
+      <button class="lab-item" data-target="section8">ЗАВДАННЯ №3 FLEXBOX</button>
+      <div class="code-buttons">
+        <button class="lab-subitem" data-target="section9">Скріншот сторінки (FLEXBOX)</button>
+        <button class="lab-subitem" data-target="section10">HTML-код (FLEXBOX)</button>
+        <button class="lab-subitem" data-target="section11">CSS-код (FLEXBOX)</button>
+      </div>
+      <button class="lab-item" data-target="section12">Висновки</button>
+      <button class="lab-item" data-target="section13">Контрольні запитання</button>
+    </aside>
 
-<h3>МЕТА: 
-⎯	придбати практичні навички роботи  верстки сторінок засобами CSS, верстки на основі плаваючих елементів, з’ясувати переваги та недоліки типів макетів веб-сторінок
-⎯	придбати практичні навички роботи  верстки сторінок засобами CSS та FLEXBOX   
+    <section class="lab-display">
+      <div id="section1" class="lab-section active">
+        <h2>Тема, мета та місце розташування</h2>
+        <p><strong>ТЕМА:</strong> Верстка HTML-документів.</p>
+        <p><strong>МЕТА:</strong> Придбати практичні навички верстки HTML-документів.</p>
+        <h3><a href="https://github.com/denyspopadenko/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій веб-застосунку</a></h3>
+        <h3><a href="https://denyspopadenko.github.io/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на живу сторінку застосунку</a></h3>
+        <h3><a href="https://github.com/denyspopadenko/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій звітного HTML-документа</a></h3>
+        <h3><a href="https://denyspopadenko.github.io/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на репозиторій на живу сторінку звітного HTML-документа</a></h3>
+      </div>
 
-</h3>
-<p> </p>
-<h3><a href="https://github.com/denyspopadenko/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій  власного WEB-застосунку</a></h3>
-<h3><a href="https://denyspopadenko.github.io/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на репозиторій на живу сторінку  власного WEB-Застосунку</a></h3>
-<p> </p>
-<h3><a href="https://github.com/denyspopadenko/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій звітного HTML-документа</a></h3>
-<h3><a href="https://denyspopadenko.github.io/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на репозиторій на  живу сторінку  звітного HTML-документа</a></h3>
+      <div id="section2" class="lab-section">
+        <h2>ЗАВДАННЯ №1 Зовнішній вигляд макету. Код макету.</h2>
+        <p>Тут буде інформація про завдання №1.</p>
+      </div>
 
-    </div>
+      <div id="section3" class="lab-section">
+        <h2>ЗАВДАННЯ №2</h2>
+        <p>Тут буде інформація про завдання №2.</p>
+      </div>
+
+      <div id="section4" class="lab-section">
+        <h2>Фіксована таблична верстка</h2>
+        <p>Тут буде інформація про фіксовану табличну верстку.</p>
+      </div>
+
+      <div id="section5" class="lab-section">
+        <h2>Гумова таблична верстка</h2>
+        <p>Тут буде інформація про гумову табличну верстку.</p>
+      </div>
+
+      <div id="section6" class="lab-section">
+        <h2>Фіксована блокова верстка</h2>
+        <p>Тут буде інформація про фіксовану блокову верстку.</p>
+      </div>
+
+      <div id="section7" class="lab-section">
+        <h2>Гумова блокова верстка</h2>
+        <p>Тут буде інформація про гумову блокову верстку.</p>
+      </div>
+
+      <div id="section8" class="lab-section">
+        <h2>ЗАВДАННЯ №3 FLEXBOX</h2>
+        <p>Тут буде інформація про завдання №3 з FLEXBOX.</p>
+      </div>
+
+      <div id="section9" class="lab-section">
+        <h2>Скріншот сторінки (FLEXBOX)</h2>
+        <p>Тут буде скріншот сторінки з FLEXBOX.</p>
+      </div>
+
+      <div id="section10" class="lab-section">
+        <h2>HTML-код (FLEXBOX)</h2>
+        <p>Тут буде HTML-код для FLEXBOX.</p>
+      </div>
+
+      <div id="section11" class="lab-section">
+        <h2>CSS-код (FLEXBOX)</h2>
+        <p>Тут буде CSS-код для FLEXBOX.</p>
+      </div>
+
+      <div id="section12" class="lab-section">
+        <h2>Висновки</h2>
+        <p>Тут буде підсумок виконаної лабораторної роботи №3.</p>
+      </div>
+
+      <div id="section13" class="lab-section">
+        <h2>Контрольні запитання</h2>
+        <p>Тут будуть контрольні запитання до лабораторної роботи №3.</p>
+      </div>
+    </section>
   </main>
 </body>
 </html>

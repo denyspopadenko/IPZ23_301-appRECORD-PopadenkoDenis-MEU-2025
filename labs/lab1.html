@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Лабораторна робота №1 — Попаденко Денис</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../main.js"></script>
 </head>
 <body>
   <header class="header">
     <a href="https://ieu.edu.ua/" class="uni-logo">
       <img src="../img/univer.jpg" alt="Логотип університету">
     </a>
-
     <div class="header-content">
       <h1>Міжнародний Європейський Університет</h1>
       <div class="header-space"></div>
@@ -22,13 +22,11 @@
         <strong>Група:</strong> ІПЗ-23-301
       </p>
     </div>
-
     <div class="header-photo">
       <img src="../img/me.jpg" alt="Фото студента">
     </div>
   </header>
 
-  <!-- Навігація по лабораторних -->
   <nav class="labs">
     <a href="./lab1.html" class="lab-btn active">Лабораторна робота №1</a>
     <a href="./lab2.html" class="lab-btn">Лабораторна робота №2</a>
@@ -36,25 +34,94 @@
     <a href="./lab4.html" class="lab-btn">Лабораторна робота №4</a>
     <a href="./lab5.html" class="lab-btn">Лабораторна робота №5</a>
     <a href="./lab6.html" class="lab-btn">Лабораторна робота №6</a>
-    
   </nav>
 
-  <!-- Основний контент лабораторної -->
-  <main class="lab-content">
-    <div class="lab-box">
-      <h2>Лабораторна робота №1</h2>
-      <h3>ТЕМА: СТРУКТУРА HTML-ДОКУМЕНТА. ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ. РОБОТА З ПОСИЛАННЯМИ, ТАБЛИЦЯМИ, ЗОБРАЖЕННЯМИ, СПИСКАМИ в HTML-ДОКУМЕНТІ.</h3>
+  <main class="lab-main">
+    <aside class="lab-menu">
+      <button class="lab-item active" data-target="section1">Тема, мета та місце розташування</button>
+      <button class="lab-item" data-target="section2">Опис предметного середовища</button>
+      <button class="lab-item" data-target="section3">Структура документа</button>
+      <div class="code-buttons">
+        <button class="lab-subitem" data-target="section4">HTML-код таблиць</button>
+        <button class="lab-subitem" data-target="section5">HTML-код форми</button>
+        <button class="lab-subitem" data-target="section6">HTML-код зображення</button>
+      </div>
+      <button class="lab-item" data-target="section7">Висновки</button>
+    </aside>
 
-<h3>МЕТА: придбати практичні навички роботи  з HTML-документом, таблицями, , зображеннями, посиланнями, списками, формами. Створити шаблон звітного HTML-документом для відображення результатів роботи всіх лабораторних робіт.
-</h3>
-<p> </p>
-<h3><a href="https://github.com/denyspopadenko/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій  власного WEB-застосунку</a></h3>
-<h3><a href="https://denyspopadenko.github.io/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на репозиторій на живу сторінку  власного WEB-Застосунку</a></h3>
-<p> </p>
-<h3><a href="https://github.com/denyspopadenko/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій звітного HTML-документа</a></h3>
-<h3><a href="https://denyspopadenko.github.io/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на репозиторій на  живу сторінку  звітного HTML-документа</a></h3>
+    <section class="lab-display">
+      <div id="section1" class="lab-section active">
+        <h2>Тема, мета та місце розташування</h2>
+        <p><strong>ТЕМА:</strong> Структура HTML-документа. Робота з посиланнями, таблицями, зображеннями, списками.</p>
+        <p><strong>МЕТА:</strong> Придбати практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами.</p>
+        <h3><a href="https://github.com/denyspopadenko/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій веб-застосунку</a></h3>
+        <h3><a href="https://denyspopadenko.github.io/IPZ23_301-appWEB-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на живу сторінку застосунку</a></h3>
+        <h3><a href="https://github.com/denyspopadenko/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025" class="lab-link2">Посилання на репозиторій звітного HTML-документа</a></h3>
+        <h3><a href="https://denyspopadenko.github.io/IPZ23_301-appRECORD-PopadenkoDenis-MEU-2025/" class="lab-link2">Посилання на репозиторій на живу сторінку звітного HTML-документа</a></h3>
+      </div>
 
-    </div>
+      <div id="section2" class="lab-section">
+        <h2>Опис предметного середовища</h2>
+        <p>Тут буде опис предметного середовища лабораторної роботи №1.</p>
+      </div>
+
+      <div id="section3" class="lab-section">
+        <h2>Структура документа</h2>
+        <p>Тут буде опис структури HTML-документа.</p>
+      </div>
+
+      <div id="section4" class="lab-section">
+        <h2>HTML-код таблиць</h2>
+        <div class="code-container">
+          <pre><code class="language-html">
+&lt;!-- Приклад таблиці --&gt;
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Заголовок 1&lt;/th&gt;
+    &lt;th&gt;Заголовок 2&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Дані 1&lt;/td&gt;
+    &lt;td&gt;Дані 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+          </code></pre>
+        </div>
+      </div>
+
+      <div id="section5" class="lab-section">
+        <h2>HTML-код форми</h2>
+        <div class="code-container">
+          <pre><code class="language-html">
+&lt;!-- Приклад форми --&gt;
+&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Ім'я:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name"&gt;
+  &lt;br&gt;
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email"&gt;
+  &lt;br&gt;
+  &lt;input type="submit" value="Надіслати"&gt;
+&lt;/form&gt;
+          </code></pre>
+        </div>
+      </div>
+
+      <div id="section6" class="lab-section">
+        <h2>HTML-код зображення</h2>
+        <div class="code-container">
+          <pre><code class="language-html">
+&lt;!-- Приклад зображення --&gt;
+&lt;img src="image.jpg" alt="Опис зображення" width="300" height="200"&gt;
+          </code></pre>
+        </div>
+      </div>
+
+      <div id="section7" class="lab-section">
+        <h2>Висновки</h2>
+        <p>Тут буде підсумок виконаної лабораторної роботи №1.</p>
+      </div>
+    </section>
   </main>
 </body>
 </html>
