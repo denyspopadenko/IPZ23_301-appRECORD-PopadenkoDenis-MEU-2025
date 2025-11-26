@@ -40,10 +40,10 @@
     <aside class="lab-menu">
       <button class="lab-item active" data-target="section1">Тема, мета та місце розташування</button>
       <div class="code-buttons">
-        <button class="lab-subitem" data-target="section2">Завдання №1</button>
-        <button class="lab-subitem" data-target="section3">Завдання №3</button>
-        <button class="lab-subitem" data-target="section4">Завдання №5</button>
-        <button class="lab-subitem" data-target="section5">Завдання №7</button>
+        <button class="lab-subitem" data-target="section2">Завдання №2</button>
+        <button class="lab-subitem" data-target="section3">Завдання №4</button>
+        <button class="lab-subitem" data-target="section4">Завдання №6</button>
+        <button class="lab-subitem" data-target="section5">Завдання №8</button>
         <button class="lab-subitem" data-target="section6">Завдання №9</button>
         <button class="lab-subitem" data-target="section7">Завдання №10</button>
       </div>
@@ -62,38 +62,230 @@
       </div>
 
       <div id="section2" class="lab-section">
-        <h2>Завдання №1</h2>
-        <p>Тут буде інформація про завдання №1.</p>
+        <h2>Завдання №2</h2>
+        <p><strong>Умова:</strong> Напишіть функцію <code>getProductDetails</code>, яка приймає ідентифікатор товару та дві колбек-функції (успіх та помилка).</p>
+
+        <div class="code-container">
+          <pre><code class="language-javascript">
+const products = [
+    { id: 1, name: "Laptop", price: 20000 },
+    { id: 2, name: "Phone", price: 15000 },
+    { id: 3, name: "Tablet", price: 8000 }
+];
+
+function getProductDetails(productId, successCallback, errorCallback) {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        successCallback(product);
+    } else {
+        errorCallback(`Error: Product with ID ${productId} not found.`);
+    }
+}
+
+// Виклики
+getProductDetails(2, 
+    (p) => console.log("Success:", p), 
+    (e) => console.log(e)
+);
+
+getProductDetails(99, 
+    (p) => console.log("Success:", p), 
+    (e) => console.log(e)
+);
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання:</h3>
+        <div class="code-container" style="background: #000; color: #0f0; font-family: monospace;">
+            > Success: { id: 2, name: "Phone", price: 15000 }<br>
+            > Error: Product with ID 99 not found.
+        </div>
       </div>
 
       <div id="section3" class="lab-section">
-        <h2>Завдання №3</h2>
-        <p>Тут буде інформація про завдання №3.</p>
+        <h2>Завдання №4</h2>
+        <p><strong>Умова:</strong> З об'єкту концертів отримати масив міст, де концерт ще не пройшов, та відсортувати їх хронологічно.</p>
+
+        <div class="code-container">
+          <pre><code class="language-javascript">
+const concerts = {
+    Київ: new Date("2020-04-01"),
+    Умань: new Date("2025-07-02"),
+    Вінниця: new Date("2020-04-21"),
+    Одеса: new Date("2025-03-15"),
+    Хмельницький: new Date("2020-04-18"),
+    Харків: new Date("2025-07-10"),
+};
+
+const processConcerts = (concertsObj) => {
+    const now = new Date();
+    return Object.entries(concertsObj)
+        .filter(([city, date]) => date > now) // Лише майбутні
+        .sort((a, b) => a[1] - b[1])          // Сортування за датою
+        .map(([city]) => city);               // Лише назви міст
+};
+
+console.log(processConcerts(concerts));
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання:</h3>
+        <div class="code-container" style="background: #000; color: #0f0; font-family: monospace;">
+            > ["Одеса", "Умань", "Харків"]
+        </div>
       </div>
 
       <div id="section4" class="lab-section">
-        <h2>Завдання №5</h2>
-        <p>Тут буде інформація про завдання №5.</p>
+        <h2>Завдання №6</h2>
+        <p><strong>Умова:</strong> Повернути новий масив: додати ID кожному товару, та зробити знижку 30%, якщо ціна > 300.</p>
+
+        <div class="code-container">
+          <pre><code class="language-javascript">
+const medicines = [
+    { name: "Noshpa", price: 170 },
+    { name: "Analgin", price: 55 },
+    { name: "Quanil", price: 310 },
+    { name: "Alphacholine", price: 390 },
+];
+
+const applyDiscount = (items) => {
+    return items.map((item, index) => {
+        const newItem = { ...item, id: index + 1 };
+        if (newItem.price > 300) {
+            newItem.price *= 0.7; // Знижка 30%
+        }
+        return newItem;
+    });
+};
+
+console.log(applyDiscount(medicines));
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання:</h3>
+        <div class="code-container" style="background: #000; color: #0f0; font-family: monospace;">
+            > [<br>
+            &nbsp;&nbsp;{ name: "Noshpa", price: 170, id: 1 },<br>
+            &nbsp;&nbsp;{ name: "Analgin", price: 55, id: 2 },<br>
+            &nbsp;&nbsp;{ name: "Quanil", price: 217, id: 3 },<br>
+            &nbsp;&nbsp;{ name: "Alphacholine", price: 273, id: 4 }<br>
+            > ]
+        </div>
       </div>
 
       <div id="section5" class="lab-section">
-        <h2>Завдання №7</h2>
-        <p>Тут буде інформація про завдання №7.</p>
+        <h2>Завдання №8</h2>
+        <p><strong>Умова:</strong> Написати функцію-конструктор <code>Storage</code> з методами <code>getItems</code>, <code>addItems</code>, <code>removeItem</code>.</p>
+
+        <div class="code-container">
+          <pre><code class="language-javascript">
+function Storage(items) {
+    this.items = items;
+
+    this.getItems = function() {
+        return this.items;
+    };
+    this.addItems = function(item) {
+        this.items.push(item);
+    };
+    this.removeItem = function(item) {
+        const idx = this.items.indexOf(item);
+        if (idx !== -1) this.items.splice(idx, 1);
+    };
+}
+
+const storage = new Storage(["apple", "banana", "mango"]);
+console.log(storage.getItems());
+
+storage.addItems("orange");
+console.log("Added orange:", storage.getItems());
+
+storage.removeItem("banana");
+console.log("Removed banana:", storage.getItems());
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання:</h3>
+        <div class="code-container" style="background: #000; color: #0f0; font-family: monospace;">
+            > ["apple", "banana", "mango"]<br>
+            > "Added orange:" ["apple", "banana", "mango", "orange"]<br>
+            > "Removed banana:" ["apple", "mango", "orange"]
+        </div>
       </div>
 
       <div id="section6" class="lab-section">
         <h2>Завдання №9</h2>
-        <p>Тут буде інформація про завдання №9.</p>
+        <p><strong>Умова:</strong> Порахувати кількість кожного тегу в масиві твітів.</p>
+
+        <div class="code-container">
+          <pre><code class="language-javascript">
+const tweets = [
+    { id: "000", likes: 5, tags: ["js", "nodejs"] },
+    { id: "001", likes: 2, tags: ["html", "css"] },
+    { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+    { id: "003", likes: 8, tags: ["css", "react"] },
+    { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+
+const tagsStats = tweets
+    .flatMap(t => t.tags) // Збираємо всі теги в один масив
+    .reduce((acc, tag) => {
+        acc[tag] = (acc[tag] || 0) + 1;
+        return acc;
+    }, {});
+
+console.log(tagsStats);
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання:</h3>
+        <div class="code-container" style="background: #000; color: #0f0; font-family: monospace;">
+            > { js: 3, nodejs: 3, html: 2, css: 2, react: 2 }
+        </div>
       </div>
 
       <div id="section7" class="lab-section">
         <h2>Завдання №10</h2>
-        <p>Тут буде інформація про завдання №10.</p>
+        <p><strong>Умова:</strong> Написати функцію <code>checkBrackets(str)</code> для перевірки правильності закриття дужок.</p>
+
+        <div class="code-container">
+          <pre><code class="language-javascript">
+function checkBrackets(str) {
+    const stack = [];
+    const pairs = { '(': ')', '{': '}', '[': ']' };
+
+    for (const char of str) {
+        if (pairs[char]) {
+            stack.push(char);
+        } else if (Object.values(pairs).includes(char)) {
+            if (pairs[stack.pop()] !== char) return false;
+        }
+    }
+    return stack.length === 0;
+}
+
+console.log(checkBrackets("function f() { return [1]; }")); // true
+console.log(checkBrackets("{ [ } ]")); // false
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання:</h3>
+        <div class="code-container" style="background: #000; color: #0f0; font-family: monospace;">
+            > true<br>
+            > false
+        </div>
       </div>
 
       <div id="section8" class="lab-section">
         <h2>Висновки</h2>
-        <p>Тут буде підсумок виконаної лабораторної роботи №6.</p>
+        <p>У ході виконання лабораторної роботи №6 я закріпив навички роботи з об'єктами та масивами в JavaScript. Я навчився:</p>
+        <ul>
+            <li>Використовувати <strong>Call-back функції</strong> для обробки асинхронних подій.</li>
+            <li>Працювати з методами масивів вищого порядку: <code>map</code> (трансформація), <code>filter</code> (відбір), <code>reduce</code> (агрегація), <code>sort</code> (сортування).</li>
+            <li>Маніпулювати об'єктами, використовувати <code>Object.entries()</code> та деструктуризацію.</li>
+            <li>Створювати функції-конструктори для генерації об'єктів (OOP стиль).</li>
+            <li>Реалізовувати алгоритмічні задачі (перевірка дужок через стек).</li>
+        </ul>
       </div>
     </section>
   </main>

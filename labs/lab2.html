@@ -224,7 +224,147 @@ ol {
       </div>
 
       <div id="section8" class="lab-section">
-        <h2>Контрольні запитання</h2>
+  <h2>Контрольні запитання</h2>
+
+  <div class="question">
+    <h3>1. Для чого використовуються каскадні таблиці стилів?</h3>
+    <p><strong>Відповідь:</strong> Каскадні таблиці стилів (CSS) використовуються для візуального оформлення веб-сторінок. Вони дозволяють:</p>
+    <ul>
+      <li>Змінювати зовнішній вигляд HTML-елементів (кольори, шрифти, розміри)</li>
+      <li>Створювати адаптивний дизайн для різних пристроїв</li>
+      <li>Розміщувати елементи на сторінці (позиціонування, відступи)</li>
+      <li>Додавати анімації та переходи</li>
+      <li>Розділяти контент (HTML) та оформлення (CSS)</li>
+    </ul>
+  </div>
+
+  <div class="question">
+    <h3>2. Які методи визначення стилів у HTML-документі ви знаєте?</h3>
+    <p><strong>Відповідь:</strong> Існує три основні методи:</p>
+    <ul>
+      <li><strong>Внутрішні стилі (Inline)</strong> - стилі записуються безпосередньо в атрибуті style тега:
+        <div class="code-container">
+          <pre><code class="language-html">&lt;p style="color: blue; font-size: 16px;"&gt;Текст&lt;/p&gt;</code></pre>
+        </div>
+      </li>
+      <li><strong>Внутрішня таблиця стилів (Internal)</strong> - стилі розміщуються в тезі &lt;style&gt; всередині &lt;head&gt;:
+        <div class="code-container">
+          <pre><code class="language-html">&lt;style&gt;
+  p { color: blue; font-size: 16px; }
+&lt;/style&gt;</code></pre>
+        </div>
+      </li>
+      <li><strong>Зовнішня таблиця стилів (External)</strong> - стилі зберігаються в окремому .css файлі та підключаються через &lt;link&gt;:
+        <div class="code-container">
+          <pre><code class="language-html">&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="question">
+    <h3>3. У чому різниця між принципами каскадування і спадкування?</h3>
+    <p><strong>Відповідь:</strong></p>
+    <ul>
+      <li><strong>Каскадування</strong> - це механізм, який визначає, який CSS стиль буде застосовано до елемента, коли є конфліктуючі правила. Воно працює за принципом:
+        <ul>
+          <li>Важливість (!important)</li>
+          <li>Специфічність селектора</li>
+          <li>Порядок оголошення</li>
+        </ul>
+      </li>
+      <li><strong>Спадкування</strong> - це механізм, за яким дочірні елементи успадковують деякі стилі від батьківських елементів (наприклад, color, font-family, text-align)</li>
+    </ul>
+    <p><strong>Приклад:</strong> Якщо для body встановлено color: black, то всі текстові елементи всередині body успадкують цей колір (спадкування). Але якщо для конкретного p встановлено color: red, то він перевизначить успадкований колір (каскадування).</p>
+  </div>
+
+  <div class="question">
+    <h3>4. Як у HTML-документі оформлюються селектори тегу і класу?</h3>
+    <p><strong>Відповідь:</strong></p>
+    <ul>
+      <li><strong>Селектор тегу</strong> - вибирає всі елементи з певним тегом. У HTML клас не потрібен, у CSS використовується ім'я тега:
+        <div class="code-container">
+          <pre><code class="language-html">&lt;p&gt;Це параграф&lt;/p&gt;
+&lt;div&gt;Це блок&lt;/div&gt;</code></pre>
+        </div>
+        <div class="code-container">
+          <pre><code class="language-css">p { color: blue; }
+div { background: yellow; }</code></pre>
+        </div>
+      </li>
+      <li><strong>Селектор класу</strong> - вибирає елементи з певним класом. У HTML використовується атрибут class, у CSS - крапка перед ім'ям класу:
+        <div class="code-container">
+          <pre><code class="language-html">&lt;p class="highlight"&gt;Важливий текст&lt;/p&gt;
+&lt;div class="container"&gt;Контейнер&lt;/div&gt;</code></pre>
+        </div>
+        <div class="code-container">
+          <pre><code class="language-css">.highlight { background: yellow; }
+.container { width: 80%; margin: 0 auto; }</code></pre>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="question">
+    <h3>5. Для чого використовується ідентифікатор?</h3>
+    <p><strong>Відповідь:</strong> Ідентифікатор (id) використовується для:</p>
+    <ul>
+      <li>Унікальної ідентифікації одного елемента на сторінці</li>
+      <li>Створення якорних посилань для навігації по сторінці</li>
+      <li>Зв'язування елементів форм з їх мітками (label)</li>
+      <li>Доступу до елементів через JavaScript</li>
+    </ul>
+    <div class="code-container">
+      <pre><code class="language-html">&lt;div id="header"&gt;Заголовок сайту&lt;/div&gt;
+&lt;a href="#section1"&gt;Перейти до розділу 1&lt;/a&gt;
+&lt;label for="username"&gt;Ім'я:&lt;/label&gt;
+&lt;input type="text" id="username"&gt;</code></pre>
+    </div>
+    <div class="code-container">
+      <pre><code class="language-css">#header { background: #333; color: white; }</code></pre>
+    </div>
+  </div>
+
+  <div class="question">
+    <h3>6. Навести приклади оформлення текстових елементів</h3>
+    <p><strong>Відповідь:</strong> Приклади CSS властивостей для оформлення тексту:</p>
+    <div class="code-container">
+      <pre><code class="language-css">/* Шрифт та розмір */
+p {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Колір та вирівнювання */
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Відступи та міжрядковий інтервал */
+.text-block {
+  line-height: 1.6;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  text-indent: 20px;
+}
+
+/* Декорація тексту */
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.highlight {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  background: linear-gradient(transparent 60%, yellow 60%);
+}</code></pre>
+    </div>
+  </div>
+</div>
        
       </div>
     </section>

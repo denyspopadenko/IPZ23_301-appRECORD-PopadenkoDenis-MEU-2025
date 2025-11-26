@@ -69,63 +69,779 @@
       </div>
 
       <div id="section2" class="lab-section">
-        <h2>ЗАВДАННЯ №1 Зовнішній вигляд макету. Код макету.</h2>
-        <p>Тут буде інформація про завдання №1.</p>
-      </div>
+  <h2>ЗАВДАННЯ №1 Зовнішній вигляд макету. Код макету.</h2>
+  
+  <h3>Тип макету: Адаптивний гумовий макет з використанням CSS Flexbox та CSS Grid</h3>
+
+  <h4>Опис макету сайту AsiaBox:</h4>
+  <p>Сайт використовує сучасний адаптивний підхід з комбінацією технологій:</p>
+  
+  <ul>
+    <li><strong>Flexbox</strong> - для одновимірного розташування елементів (header, footer, мобільне меню)</li>
+    <li><strong>CSS Grid</strong> - для двовимірного розташування сітки переваг на головній сторінці</li>
+    <li><strong>Tailwind CSS</strong> - утилітарний CSS-фреймворк для швидкої розробки</li>
+    <li><strong>Медіа-запити</strong> - для адаптації під різні розміри екранів</li>
+  </ul>
+
+  <h4>Структура макету:</h4>
+  <div class="code-container">
+    <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;title&gt;AsiaBox — Домашня&lt;/title&gt;
+&lt;/head&gt;
+&lt;body class="bg-beige-light flex flex-col min-h-screen"&gt;
+
+  &lt;!-- HEADER --&gt;
+  &lt;header class="bg-white shadow-md py-4 px-6 flex justify-between items-center sticky top-0 z-50"&gt;
+    &lt;!-- Логотип та навігація --&gt;
+  &lt;/header&gt;
+
+  &lt;!-- MOBILE MENU OVERLAY --&gt;
+  &lt;div id="mobileMenuOverlay" class="fixed inset-0 bg-black bg-opacity-40 hidden z-40"&gt;&lt;/div&gt;
+
+  &lt;!-- MOBILE MENU --&gt;
+  &lt;nav id="mobileMenu" class="fixed top-0 left-0 h-full w-72 bg-white shadow-xl transform -translate-x-full z-50"&gt;
+    &lt;!-- Мобільна навігація --&gt;
+  &lt;/nav&gt;
+
+  &lt;!-- MAIN CONTENT --&gt;
+  &lt;main class="flex-grow px-6 py-12"&gt;
+    &lt;!-- Герой секція --&gt;
+    &lt;section class="text-center max-w-3xl mx-auto"&gt;
+      &lt;h2&gt;Ласкаво просимо до AsiaBox 🍜&lt;/h2&gt;
+      &lt;p&gt;Справжні азійські страви...&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Переваги (CSS Grid) --&gt;
+    &lt;section class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center"&gt;
+      &lt;div class="bg-white rounded-2xl p-6 shadow-md"&gt;
+        &lt;!-- Картка переваги --&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;!-- FOOTER --&gt;
+  &lt;footer class="bg-white text-center py-6 border-t mt-10"&gt;
+    &lt;!-- Футер --&gt;
+  &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+  </div>
+
+  <h4>Ключові особливості макету:</h4>
+
+  <h5>1. Flexbox для основного макету:</h5>
+  <div class="code-container">
+    <pre><code class="language-css">
+/* Основний контейнер */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Footer завжди внизу */
+main {
+  flex-grow: 1;
+}
+    </code></pre>
+  </div>
+
+  <h5>2. CSS Grid для сітки переваг:</h5>
+  <div class="code-container">
+    <pre><code class="language-css">
+/* Адаптивна сітка */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Мобільна версія */
+  gap: 2rem;
+}
+
+/* Планшетна версія */
+@media (min-width: 640px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Десктопна версія */
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+    </code></pre>
+  </div>
+
+  <h5>3. Адаптивна навігація:</h5>
+  <div class="code-container">
+    <pre><code class="language-css">
+/* Десктопне меню */
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+  }
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+    </code></pre>
+  </div>
+
+  <h4>Переваги обраного макету:</h4>
+  <ul>
+    <li><strong>Адаптивність</strong> - сайт коректно відображається на всіх пристроях</li>
+    <li><strong>Гумовий дизайн</strong> - елементи плавно змінюють розміри при зміні розміру вікна</li>
+    <li><strong>Семантична структура</strong> - використання правильних HTML5 тегів</li>
+    <li><strong>Доступність</strong> - підтримка клавіатурної навігації та скрінрідерів</li>
+    <li><strong>Прогресивне покращення</strong> - базова функціональність працює навіть без JavaScript</li>
+  </ul>
+
+  <h4>Відповідь викладачу:</h4>
+  <p><strong>Я використав адаптивний гумовий макет з комбінацією Flexbox та CSS Grid з наступних причин:</strong></p>
+  <ul>
+    <li><strong>Flexbox</strong> ідеально підходить для одновимірних макетів (header, footer, вирівнювання елементів)</li>
+    <li><strong>CSS Grid</strong> ефективний для складних двовимірних сіток (сітка переваг, каталог товарів)</li>
+    <li><strong>Гумовий підхід</strong> забезпечує плавну адаптацію під будь-які розміри екранів</li>
+    <li><strong>Tailwind CSS</strong> прискорює розробку та забезпечує консистентність дизайну</li>
+    <li><strong>Mobile-first</strong> підхід гарантує оптимальну продуктивність на мобільних пристроях</li>
+  </ul>
+
+  <p>Такий підхід дозволяє створити сучасний, швидкий та доступний веб-сайт, який чудово працює на всіх пристроях та відповідає сучасним стандартам веб-розробки.</p>
+</div>
 
       <div id="section3" class="lab-section">
         <h2>ЗАВДАННЯ №2</h2>
-        <p>Тут буде інформація про завдання №2.</p>
+        <p><strong>Мета:</strong> Створити веб-сторінки з розміткою згідно з індивідуальним варіантом засобами HTML та CSS.</p>
+        
+        <div style="background: #f4f4f4; padding: 15px; border-left: 4px solid #0923f0; margin: 20px 0;">
+            <h3>Варіант 8 (Таблична верстка)</h3>
+            <p>Необхідно реалізувати макет таблицею:</p>
+            <ul>
+                <li><strong>1 (Header):</strong> Синій, зверху на всю ширину.</li>
+                <li><strong>2 (Sidebar):</strong> Жовтий, ліворуч, високий (об'єднує рядки).</li>
+                <li><strong>5 (Subheader):</strong> Жовтий, праворуч від сайдбару.</li>
+                <li><strong>4 (Content):</strong> Білий, основний контент.</li>
+                <li><strong>3 (Footer):</strong> Синій, знизу на всю ширину.</li>
+            </ul>
+        </div>
+
+        <div style="background: #f4f4f4; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0;">
+            <h3>Варіант 9 (Блокова верстка)</h3>
+            <p>Необхідно реалізувати макет блоками (float):</p>
+            <ul>
+                <li><strong>2 (Sidebar):</strong> Жовтий, ліворуч на всю висоту.</li>
+                <li><strong>Права частина:</strong> містить блоки 1, 4, 3.</li>
+                <li><strong>1 (Header):</strong> Синій.</li>
+                <li><strong>4 (Content):</strong> Білий.</li>
+                <li><strong>3 (Footer):</strong> Синій.</li>
+            </ul>
+        </div>
       </div>
 
       <div id="section4" class="lab-section">
-        <h2>Фіксована таблична верстка</h2>
-        <p>Тут буде інформація про фіксовану табличну верстку.</p>
+        <h2>Фіксована таблична верстка (Варіант 8)</h2>
+        <p>Реалізація табличної верстки фіксованої ширини (600px). Використано об'єднання комірок <code>colspan</code> та <code>rowspan</code>.</p>
+        
+        <div class="code-container">
+          <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Фіксована таблична верстка&lt;/title&gt;
+&lt;style&gt;
+  table {
+    width: 600px;
+    height: 400px;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  td {
+    border: 1px solid black;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  /* Кольори згідно варіанту */
+  .t1, .t3 { background: #007bff; color: white; }
+  .t2, .t5 { background: #ffc107; }
+  .t4 { background: white; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;table&gt;
+    &lt;!-- Рядок 1: Header (на всю ширину) --&gt;
+    &lt;tr&gt;
+       &lt;td colspan="2" class="t1" height="50"&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- Рядок 2: Sidebar (зліва, високий) + Subheader --&gt;
+    &lt;tr&gt;
+       &lt;td rowspan="2" class="t2" width="150"&gt;2&lt;/td&gt;
+       &lt;td class="t5" height="50"&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- Рядок 3: Content --&gt;
+    &lt;tr&gt;
+       &lt;td class="t4"&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- Рядок 4: Footer (на всю ширину) --&gt;
+    &lt;tr&gt;
+       &lt;td colspan="2" class="t3" height="50"&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання:</h3>
+        <div style="background: #eee; padding: 20px; display: flex; justify-content: center; overflow-x: auto;">
+            <table border="1" style="width: 600px; height: 300px; border-collapse: collapse; text-align: center; color: black; background: white;">
+                <tr><td colspan="2" style="background: #007bff; color: white; height: 40px;">1</td></tr>
+                <tr><td rowspan="2" style="background: #ffc107; width: 150px;">2</td><td style="background: #ffc107; height: 40px;">5</td></tr>
+                <tr><td style="background: white;">4</td></tr>
+                <tr><td colspan="2" style="background: #007bff; color: white; height: 40px;">3</td></tr>
+            </table>
+        </div>
       </div>
 
       <div id="section5" class="lab-section">
-        <h2>Гумова таблична верстка</h2>
-        <p>Тут буде інформація про гумову табличну верстку.</p>
+        <h2>Гумова таблична верстка (Варіант 8)</h2>
+        <p>Реалізація гумової верстки. Ширина таблиці — 100%, ширина сайдбару задана у відсотках.</p>
+
+        <div class="code-container">
+          <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Гумова таблична верстка&lt;/title&gt;
+&lt;style&gt;
+  table {
+    width: 100%; /* Гумова ширина */
+    height: 100vh;
+    border-collapse: collapse;
+  }
+  td {
+    border: 1px solid black;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .t1, .t3 { background: #007bff; color: white; }
+  .t2, .t5 { background: #ffc107; }
+  .t4 { background: white; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+       &lt;td colspan="2" class="t1" height="50"&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+       &lt;td rowspan="2" class="t2" width="30%"&gt;2&lt;/td&gt;
+       &lt;td class="t5" height="50"&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+       &lt;td class="t4"&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+       &lt;td colspan="2" class="t3" height="50"&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання:</h3>
+        <div style="background: #eee; padding: 10px;">
+            <table border="1" style="width: 100%; height: 200px; border-collapse: collapse; text-align: center; color: black; background: white;">
+                <tr><td colspan="2" style="background: #007bff; color: white; height: 30px;">1</td></tr>
+                <tr><td rowspan="2" style="background: #ffc107; width: 30%;">2</td><td style="background: #ffc107; height: 30px;">5</td></tr>
+                <tr><td style="background: white;">4</td></tr>
+                <tr><td colspan="2" style="background: #007bff; color: white; height: 30px;">3</td></tr>
+            </table>
+        </div>
       </div>
 
       <div id="section6" class="lab-section">
-        <h2>Фіксована блокова верстка</h2>
-        <p>Тут буде інформація про фіксовану блокову верстку.</p>
+        <h2>Фіксована блокова верстка (Варіант 9)</h2>
+        <p>Реалізація макету за допомогою блоків <code>div</code> та властивості <code>float</code>. Ширина контейнера фіксована.</p>
+
+        <div class="code-container">
+          <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Фіксована блокова верстка&lt;/title&gt;
+&lt;style&gt;
+  .container {
+    width: 600px;
+    height: 400px;
+    margin: 20px auto;
+    background: #ccc;
+  }
+  .block {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: bold;
+    text-align: center;
+  }
+  /* Блок 2: Лівий сайдбар */
+  .b2 {
+    width: 150px;
+    height: 100%;
+    float: left;
+    background: #ffc107;
+  }
+  /* Контейнер для правих блоків */
+  .right-col {
+    width: 450px;
+    height: 100%;
+    float: right;
+  }
+  .b1 { height: 50px; background: #007bff; color: white; }
+  .b4 { height: 300px; background: white; }
+  .b3 { height: 50px; background: #007bff; color: white; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="block b2"&gt;2&lt;/div&gt;
+    &lt;div class="right-col"&gt;
+       &lt;div class="block b1"&gt;1&lt;/div&gt;
+       &lt;div class="block b4"&gt;4&lt;/div&gt;
+       &lt;div class="block b3"&gt;3&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання:</h3>
+        <div style="background: #eee; padding: 20px; display: flex; justify-content: center; overflow-x: auto;">
+            <div style="width: 600px; height: 300px; background: #ccc; color: black; border: 1px solid #000;">
+                <div style="width: 150px; height: 100%; float: left; background: #ffc107; display: flex; align-items: center; justify-content: center;"><b>2</b></div>
+                <div style="width: 450px; height: 100%; float: right;">
+                    <div style="height: 50px; background: #007bff; color: white; display: flex; align-items: center; justify-content: center;"><b>1</b></div>
+                    <div style="height: 200px; background: white; display: flex; align-items: center; justify-content: center;"><b>4</b></div>
+                    <div style="height: 50px; background: #007bff; color: white; display: flex; align-items: center; justify-content: center;"><b>3</b></div>
+                </div>
+            </div>
+        </div>
       </div>
 
       <div id="section7" class="lab-section">
-        <h2>Гумова блокова верстка</h2>
-        <p>Тут буде інформація про гумову блокову верстку.</p>
+        <h2>Гумова блокова верстка (Варіант 9)</h2>
+        <p>Реалізація гумової блокової верстки. Всі ширини та висоти задані у відсотках.</p>
+
+        <div class="code-container">
+          <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Гумова блокова верстка&lt;/title&gt;
+&lt;style&gt;
+  html, body { height: 100%; margin: 0; }
+  .container {
+    width: 100%;
+    height: 100vh;
+  }
+  .block {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: bold;
+  }
+  /* Блок 2: 30% ширини */
+  .b2 {
+    width: 30%;
+    height: 100%;
+    float: left;
+    background: #ffc107;
+  }
+  /* Права колонка: 70% ширини */
+  .right-col {
+    width: 70%;
+    height: 100%;
+    float: right;
+  }
+  /* Висоти у відсотках */
+  .b1 { height: 15%; background: #007bff; color: white; }
+  .b4 { height: 70%; background: white; }
+  .b3 { height: 15%; background: #007bff; color: white; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="block b2"&gt;2&lt;/div&gt;
+    &lt;div class="right-col"&gt;
+       &lt;div class="block b1"&gt;1&lt;/div&gt;
+       &lt;div class="block b4"&gt;4&lt;/div&gt;
+       &lt;div class="block b3"&gt;3&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання:</h3>
+        <div style="background: #eee; padding: 10px;">
+            <div style="width: 100%; height: 200px; background: #ccc; color: black; border: 1px solid #000;">
+                <div style="width: 30%; height: 100%; float: left; background: #ffc107; display: flex; align-items: center; justify-content: center;"><b>2</b></div>
+                <div style="width: 70%; height: 100%; float: right;">
+                    <div style="height: 15%; background: #007bff; color: white; display: flex; align-items: center; justify-content: center;"><b>1</b></div>
+                    <div style="height: 70%; background: white; display: flex; align-items: center; justify-content: center;"><b>4</b></div>
+                    <div style="height: 15%; background: #007bff; color: white; display: flex; align-items: center; justify-content: center;"><b>3</b></div>
+                </div>
+            </div>
+        </div>
       </div>
 
       <div id="section8" class="lab-section">
         <h2>ЗАВДАННЯ №3 FLEXBOX</h2>
-        <p>Тут буде інформація про завдання №3 з FLEXBOX.</p>
+        <p><strong>Мета:</strong> Виконати верстку макету згідно з варіантом №10, використовуючи технологію <strong>CSS Flexbox</strong>.</p>
+        <p><strong>Вимоги до макету (Варіант 10):</strong></p>
+        <ul>
+            <li><strong>Header:</strong> Логотип та інформаційна смуга.</li>
+            <li><strong>Navigation:</strong> Горизонтальне меню на всю ширину.</li>
+            <li><strong>Main Content:</strong> Блок з зображенням та описом курсів (розміщення в рядок).</li>
+            <li><strong>Info Blocks:</strong> Три рівнозначні колонки (Синя - список курсів, Помаранчева - переваги, Червона - пошук).</li>
+            <li><strong>Footer:</strong> Чотири колонки з корисною інформацією.</li>
+        </ul>
       </div>
 
       <div id="section9" class="lab-section">
-        <h2>Скріншот сторінки (FLEXBOX)</h2>
-        <p>Тут буде скріншот сторінки з FLEXBOX.</p>
+        <h2>Результат виконання (Live Preview)</h2>
+        <p>Нижче наведено результат верстки, реалізований прямо на цій сторінці:</p>
+        
+        <style>
+            .preview-wrapper { font-family: Arial, sans-serif; border: 1px solid #ccc; max-width: 1000px; margin: 0 auto; color: #333; }
+            
+            /* Header */
+            .p-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #f4f4f4; }
+            .p-logo { display: flex; align-items: center; gap: 10px; font-weight: bold; color: #2980b9; font-size: 20px; }
+            .p-logo-circle { width: 40px; height: 40px; border: 2px solid black; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; font-weight: bold; }
+            .p-schedule { font-size: 12px; color: #000080; text-align: right; }
+
+            /* Navigation */
+            .p-nav { display: flex; background: #3399cc; list-style: none; padding: 0; margin: 0; justify-content: space-between; }
+            .p-nav li { flex: 1; text-align: center; border-right: 1px solid white; }
+            .p-nav li:last-child { border-right: none; }
+            .p-nav a { display: block; padding: 15px 0; color: white; text-decoration: none; font-weight: bold; font-size: 14px; }
+            .p-nav a:hover { background: #2980b9; }
+
+            /* Hero Section */
+            .p-hero { display: flex; padding: 20px; gap: 20px; align-items: flex-start; background: #fff; }
+            .p-hero img { width: 40%; height: auto; border: 1px solid #ddd; }
+            .p-hero-text { width: 60%; font-size: 14px; line-height: 1.5; text-align: justify; }
+
+            /* 3 Columns Section */
+            .p-columns { display: flex; color: white; }
+            .p-col { flex: 1; padding: 20px; box-sizing: border-box; }
+            
+            /* Blue Column */
+            .col-blue { background: #3399cc; }
+            .col-blue ul { list-style: none; padding: 0; }
+            .col-blue li { padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.3); font-size: 13px; cursor: pointer; }
+            
+            /* Orange Column */
+            .col-orange { background: #ff9900; }
+            .col-orange h4 { margin-top: 0; display: flex; align-items: center; gap: 5px; }
+            .col-orange p { font-size: 12px; line-height: 1.4; margin-bottom: 10px; }
+            
+            /* Red Column */
+            .col-red { background: #d32f2f; }
+            .search-box { width: 100%; padding: 8px; margin-top: 10px; box-sizing: border-box; }
+
+            /* Footer */
+            .p-footer { display: flex; background: #eee; padding: 10px; border-top: 3px solid #ccc; }
+            .p-f-col { flex: 1; padding: 0 10px; border-right: 1px solid #ccc; }
+            .p-f-col:last-child { border-right: none; }
+            .p-f-col h4 { color: #006699; margin: 0 0 10px 0; font-size: 14px; }
+        </style>
+
+        <div class="preview-wrapper">
+            <header class="p-header">
+                <div class="p-logo">
+                    <div class="p-logo-circle">it</div>
+                    Навчальний центр навчання - IT
+                </div>
+                <div class="p-schedule">Ми працюємо Пн-Пт з 10:00 до 19:00 Сб-Нд: Вихідний.</div>
+            </header>
+
+            <ul class="p-nav">
+                <li><a href="#">Головна</a></li>
+                <li><a href="#">Акції</a></li>
+                <li><a href="#">Курси</a></li>
+                <li><a href="#">Про центр</a></li>
+                <li><a href="#">Контакти</a></li>
+                <li><a href="#">Ціни</a></li>
+                <li><a href="#">Блог</a></li>
+            </ul>
+
+            <section class="p-hero">
+                <img src="https://via.placeholder.com/300x150/000000/FFFFFF?text=WEB+Programming" alt="Web Programming">
+                <div class="p-hero-text">
+                    <h3>Курси web - програмування в Києві.</h3>
+                    <p>Ми шукаємо всіх тих, кому цікавий світ програмування! Хочете займатися розробкою програмного забезпечення і побудовою web-сайтів? Наша команда IT готова надавати свої послуги людям будь-якого рівня знань. Якщо наші клієнти новачки, то ми почнемо заняття з основ.</p>
+                </div>
+            </section>
+
+            <section class="p-columns">
+                <div class="p-col col-blue">
+                    <h4>Курси:</h4>
+                    <ul>
+                        <li>Курси інженерної графіки</li>
+                        <li>Курси комп'ютерного моделювання</li>
+                        <li>Курси програмування</li>
+                        <li>Курси веб-дизайну</li>
+                        <li>Створення сайтів</li>
+                    </ul>
+                </div>
+                <div class="p-col col-orange">
+                    <h4>Нова форма навчання</h4>
+                    <p><strong>! Вибір будь-якого часу.</strong> Проведення занять безпосередньо у слухача на дому або в офісі.</p>
+                    <p><strong>! Індивідуальна програма.</strong> Ви вчите тільки те, що вам потрібно.</p>
+                </div>
+                <div class="p-col col-red">
+                    <h4>Знайти курс по інтересам</h4>
+                    <p>Скористайтеся пошуком, щоб знайти потрібне:</p>
+                    <input type="text" class="search-box" placeholder="Пошук курсів...">
+                </div>
+            </section>
+
+            <footer class="p-footer">
+                <div class="p-f-col"><h4>Ми на мапі</h4></div>
+                <div class="p-f-col"><h4>Зв'язок з нами</h4></div>
+                <div class="p-f-col"><h4>Корисні посилання</h4></div>
+                <div class="p-f-col"><h4>Популярне на блозі</h4></div>
+            </footer>
+        </div>
       </div>
 
       <div id="section10" class="lab-section">
         <h2>HTML-код (FLEXBOX)</h2>
-        <p>Тут буде HTML-код для FLEXBOX.</p>
+        <p>Основна структура сторінки з використанням семантичних тегів.</p>
+        <div class="code-container">
+          <pre><code class="language-html">
+&lt;div class="wrapper"&gt;
+  &lt;!-- Header: Flex container --&gt;
+  &lt;header class="flex-header"&gt;
+      &lt;div class="logo"&gt;Навчальний центр IT&lt;/div&gt;
+      &lt;div class="info"&gt;Пн-Пт 10:00 - 19:00&lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;!-- Navigation: Flex container --&gt;
+  &lt;nav class="flex-nav"&gt;
+      &lt;a href="#"&gt;Головна&lt;/a&gt;
+      &lt;a href="#"&gt;Акції&lt;/a&gt;
+      &lt;a href="#"&gt;Курси&lt;/a&gt;
+      &lt;a href="#"&gt;Контакти&lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;!-- Main Content: Flex container --&gt;
+  &lt;main class="flex-content"&gt;
+      &lt;div class="image-block"&gt;&lt;img src="web.jpg" alt="Web"&gt;&lt;/div&gt;
+      &lt;div class="text-block"&gt;
+          &lt;h1&gt;Курси web - програмування&lt;/h1&gt;
+          &lt;p&gt;Ми шукаємо всіх тих, кому цікавий світ...&lt;/p&gt;
+      &lt;/div&gt;
+  &lt;/main&gt;
+
+  &lt;!-- Features Columns: Flex container --&gt;
+  &lt;section class="flex-features"&gt;
+      &lt;div class="col blue"&gt;
+          &lt;ul&gt;&lt;li&gt;Курси графіки&lt;/li&gt;&lt;li&gt;Веб-дизайн&lt;/li&gt;&lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class="col orange"&gt;
+          &lt;h3&gt;Нова форма навчання&lt;/h3&gt;
+          &lt;p&gt;Вибір будь-якого часу...&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="col red"&gt;
+          &lt;h3&gt;Пошук&lt;/h3&gt;
+          &lt;input type="text" placeholder="Пошук..."&gt;
+      &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Footer: Flex container --&gt;
+  &lt;footer class="flex-footer"&gt;
+      &lt;div&gt;Ми на мапі&lt;/div&gt;
+      &lt;div&gt;Зв'язок&lt;/div&gt;
+      &lt;div&gt;Посилання&lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;
+          </code></pre>
+        </div>
       </div>
 
       <div id="section11" class="lab-section">
         <h2>CSS-код (FLEXBOX)</h2>
-        <p>Тут буде CSS-код для FLEXBOX.</p>
+        <p>Використання властивостей <code>display: flex</code>, <code>justify-content</code> та <code>flex</code> для керування макетом.</p>
+        <div class="code-container">
+          <pre><code class="language-css">
+/* Основний контейнер хедера */
+.flex-header {
+    display: flex;
+    justify-content: space-between; /* Рознести по краях */
+    align-items: center; /* Центрувати по вертикалі */
+    padding: 10px;
+}
+
+/* Навігація */
+.flex-nav {
+    display: flex;
+    background-color: #3399cc;
+}
+.flex-nav a {
+    flex: 1; /* Рівна ширина для всіх посилань */
+    text-align: center;
+    padding: 15px 0;
+    color: white;
+    text-decoration: none;
+    border-right: 1px solid white;
+}
+
+/* Основний контент */
+.flex-content {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+.image-block { width: 40%; }
+.text-block { width: 60%; }
+
+/* Три кольорові колонки */
+.flex-features {
+    display: flex; /* Елементи в рядок */
+}
+.col {
+    flex: 1; /* Всі колонки однакової ширини */
+    padding: 20px;
+    color: white;
+}
+.blue { background-color: #3399cc; }
+.orange { background-color: #ff9900; }
+.red { background-color: #d32f2f; }
+
+/* Футер */
+.flex-footer {
+    display: flex;
+    background-color: #eee;
+}
+.flex-footer div {
+    flex: 1; /* Рівномірний розподіл */
+    padding: 15px;
+    border-right: 1px solid #ccc;
+    text-align: center;
+}
+          </code></pre>
+        </div>
       </div>
 
       <div id="section12" class="lab-section">
         <h2>Висновки</h2>
-        <p>Тут буде підсумок виконаної лабораторної роботи №3.</p>
+        <p>Під час виконання лабораторної роботи №3 я оволодів практичними навичками верстки веб-сторінок різними методами. Зокрема:</p>
+        <ul>
+            <li>Ознайомився з принципами побудови <strong>фіксованих</strong> та <strong>гумових</strong> макетів.</li>
+            <li>Навчився використовувати <strong>табличну верстку</strong> (теги <code>table</code>, <code>tr</code>, <code>td</code>) для створення структури сторінки.</li>
+            <li>Опанував <strong>блокову верстку</strong> з використанням властивості <code>float</code> та очищенням потоку.</li>
+            <li>Вивчив та застосував на практиці сучасну технологію <strong>Flexbox</strong> для створення адаптивних та гнучких макетів (Варіант 10).</li>
+            <li>Зрозумів переваги та недоліки кожного з підходів до верстки.</li>
+        </ul>
+        <p>Набуті знання дозволяють мені обирати оптимальний спосіб верстки залежно від поставленого технічного завдання.</p>
       </div>
 
       <div id="section13" class="lab-section">
         <h2>Контрольні запитання</h2>
-        <p>Тут будуть контрольні запитання до лабораторної роботи №3.</p>
+
+        <div class="question">
+            <h3>1. На яких трьох базових концепціях засновані всі методики верстки сторінок засобами CSS?</h3>
+            <p><strong>Відповідь:</strong> Всі методики базуються на трьох фундаментальних механізмах:</p>
+            <ol>
+                <li><strong>Потік документа (Normal Flow):</strong> стандартне розміщення елементів один за одним (блокові — зверху вниз, рядкові — зліва направо).</li>
+                <li><strong>Обтікання (Floats):</strong> вилучення елемента з нормального потоку та притискання його до краю контейнера (left/right), дозволяючи тексту обтікати його.</li>
+                <li><strong>Позиціонування (Positioning):</strong> точне розміщення елементів відносно батьківського блоку або вікна браузера (relative, absolute, fixed, sticky).</li>
+            </ol>
+        </div>
+
+        <div class="question">
+            <h3>2. Дати визначення фіксованому типу макетів. Переваги та недоліки.</h3>
+            <p><strong>Визначення:</strong> Це макет, ширина якого задана у пікселях (px) і не змінюється при зміні розміру вікна браузера.</p>
+            <ul>
+                <li><strong>Переваги:</strong> Передбачуваність дизайну (виглядає однаково у всіх), простота розробки, легше контролювати розміщення елементів.</li>
+                <li><strong>Недоліки:</strong> Поява горизонтальної смуги прокрутки на малих екранах, велика кількість порожнього місця на великих моніторах.</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>3. Дати визначення гумовому типу макетів. Переваги та недоліки.</h3>
+            <p><strong>Визначення:</strong> Це макет, ширина якого (та його внутрішніх блоків) задається у відсотках (%). Він розтягується або стискається залежно від ширини вікна.</p>
+            <ul>
+                <li><strong>Переваги:</strong> Ефективне використання всього простору екрану, відсутність горизонтального скролу.</li>
+                <li><strong>Недоліки:</strong> На дуже широких екранах рядки тексту стають занадто довгими для читання, а на вузьких — блоки можуть занадто сплюснутися, що ламає верстку.</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>4. Дати визначення еластичному типу макетів. Переваги та недоліки.</h3>
+            <p><strong>Визначення:</strong> Це макет, розміри якого задаються у відносних одиницях шрифту (em або rem). Розміри блоків залежать від розміру тексту.</p>
+            <ul>
+                <li><strong>Переваги:</strong> Макет масштабується разом зі збільшенням шрифту користувачем, зберігаючи пропорції.</li>
+                <li><strong>Недоліки:</strong> Складність у реалізації та розрахунках, зараз використовується рідко в чистому вигляді.</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>5. Дати визначення адаптивному типу макетів. Переваги та недоліки.</h3>
+            <p><strong>Визначення:</strong> Це набір декількох фіксованих макетів для різної ширини екрану, які перемикаються за допомогою CSS Media Queries (@media).</p>
+            <ul>
+                <li><strong>Переваги:</strong> Оптимізація під конкретні популярні пристрої (телефон, планшет, ноутбук).</li>
+                <li><strong>Недоліки:</strong> "Стрибкоподібна" зміна дизайну; для екранів, що знаходяться "між" контрольними точками, відображення може бути неідеальним.</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>6. Дати визначення комбінованому типу макетів. Переваги та недоліки.</h3>
+            <p><strong>Визначення:</strong> Це поєднання різних типів верстки (наприклад, фіксовані сайдбари та гумовий контентний блок).</p>
+            <ul>
+                <li><strong>Переваги:</strong> Гнучкість, можливість поєднати стабільність фіксованих елементів з адаптивністю гумових.</li>
+                <li><strong>Недоліки:</strong> Складніший код, необхідність ретельно продумувати поведінку блоків при зміні розмірів.</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>7. Як засобами HTML та CSS створити веб-сторінку за допомогою таблиці?</h3>
+            <p><strong>Відповідь:</strong> Використовується тег <code>&lt;table&gt;</code> як основний контейнер. Рядки створюються тегом <code>&lt;tr&gt;</code>, а комірки — <code>&lt;td&gt;</code>. Для створення складних структур (хедера, сайдбарів) використовують атрибути:</p>
+            <ul>
+                <li><code>colspan="n"</code> — об'єднання комірок по горизонталі.</li>
+                <li><code>rowspan="n"</code> — об'єднання комірок по вертикалі.</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>8. Як засобами HTML та CSS створити веб-сторінку за допомогою плаваючих блоків?</h3>
+            <p><strong>Відповідь:</strong> Використовуються блокові елементи <code>&lt;div&gt;</code>. Для розміщення блоків в один рядок застосовується CSS-властивість <code>float: left</code> або <code>float: right</code>. Після завершення ряду плаваючих елементів необхідно очистити потік за допомогою властивості <code>clear: both</code>, щоб наступні елементи не "наїжджали" на попередні.</p>
+        </div>
       </div>
     </section>
   </main>

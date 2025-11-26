@@ -62,32 +62,313 @@
 
       <div id="section2" class="lab-section">
         <h2>ЗАВДАННЯ №1</h2>
-        <p>Тут буде інформація про завдання №1.</p>
+        <p><strong>Мета:</strong> Створити функції для розрахунку вартості купівлі дроїдів та вартості доставки.</p>
+        
+        <div class="code-container">
+          <pre><code class="language-javascript">
+// 1. Функція замовлення дроїдів
+function makeTransaction(quantity, pricePerDroid) {
+    const totalPrice = quantity * pricePerDroid;
+    return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+}
+
+// 2. Функція доставки
+function getShippingMessage(country, price, deliveryFee) {
+    const totalPrice = price + deliveryFee;
+    return `Shipping to ${country} will cost ${totalPrice} credits`;
+}
+
+// Виклики функцій для перевірки
+console.log(makeTransaction(5, 3000)); 
+console.log(makeTransaction(3, 1000));
+console.log(makeTransaction(10, 500));
+
+console.log(getShippingMessage("Australia", 120, 50));
+console.log(getShippingMessage("Germany", 80, 20));
+console.log(getShippingMessage("Sweden", 100, 20));
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання (Console):</h3>
+        <div class="code-container" style="background: #000; color: #0f0; font-family: monospace;">
+            > "You ordered 5 droids worth 15000 credits!"<br>
+            > "You ordered 3 droids worth 3000 credits!"<br>
+            > "You ordered 10 droids worth 5000 credits!"<br>
+            > "Shipping to Australia will cost 170 credits"<br>
+            > "Shipping to Germany will cost 100 credits"<br>
+            > "Shipping to Sweden will cost 120 credits"
+        </div>
       </div>
 
       <div id="section3" class="lab-section">
         <h2>ЗАВДАННЯ №2</h2>
-        <p>Тут буде інформація про завдання №2.</p>
+        <p><strong>Мета:</strong> Створити функції для перевірки на спам та розрахунку покупки з перевіркою балансу.</p>
+
+        <div class="code-container">
+          <pre><code class="language-javascript">
+// 1. Перевірка на спам
+function checkForSpam(message) {
+    const lowerMessage = message.toLowerCase();
+    return lowerMessage.includes("spam") || lowerMessage.includes("sale");
+}
+
+// 2. Покупка дроїдів з перевіркою кредитів
+function makeTransaction(quantity, pricePerDroid, customerCredits) {
+    const totalPrice = quantity * pricePerDroid;
+    if (totalPrice > customerCredits) {
+        return "Insufficient funds!";
+    } else {
+        return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+    }
+}
+
+// Перевірка
+console.log(checkForSpam("Latest Technology News")); // false
+console.log(checkForSpam("Get best SALE offers now!")); // true
+console.log(checkForSpam("Amazing SalE, only tonight!")); // true
+
+console.log(makeTransaction(5, 3000, 23000)); // Success
+console.log(makeTransaction(8, 2000, 10000)); // Insufficient
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання (Console):</h3>
+        <div class="code-container" style="background: #000; color: #0f0; font-family: monospace;">
+            > false<br>
+            > true<br>
+            > true<br>
+            > "You ordered 5 droids worth 15000 credits!"<br>
+            > "Insufficient funds!"
+        </div>
       </div>
 
       <div id="section4" class="lab-section">
         <h2>ЗАВДАННЯ №3</h2>
-        <p>Тут буде інформація про завдання №3.</p>
+        <p><strong>Мета:</strong> Робота з методами масивів (фільтрація та об'єднання).</p>
+
+        <div class="code-container">
+          <pre><code class="language-javascript">
+// 1. Фільтрація масиву
+function filterArray(numbers, value) {
+    const filteredNumbers = [];
+    for (const number of numbers) {
+        if (number > value) {
+            filteredNumbers.push(number);
+        }
+    }
+    return filteredNumbers;
+}
+
+// 2. Створення нового масиву з обмеженням довжини
+function makeArray(firstArray, secondArray, maxLength) {
+    const newArray = firstArray.concat(secondArray);
+    if (newArray.length > maxLength) {
+        return newArray.slice(0, maxLength);
+    }
+    return newArray;
+}
+
+// Перевірка
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); 
+// ["Mango", "Poly", "Ajax"]
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 5)); 
+// ["Mango", "Poly", "Ajax", "Chelsea"]
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання (Console):</h3>
+        <div class="code-container" style="background: #000; color: #0f0; font-family: monospace;">
+            > [4, 5]<br>
+            > [24, 41, 76]<br>
+            > ["Mango", "Poly", "Ajax"]<br>
+            > ["Mango", "Poly", "Ajax", "Chelsea"]
+        </div>
       </div>
 
       <div id="section5" class="lab-section">
-        <h2>ЗАВДАННЯ №4</h2>
-        <p>Тут буде інформація про завдання №4.</p>
+        <h2>ЗАВДАННЯ №4 (Варіант 8)</h2>
+        <p><strong>Завдання 1:</strong> Знайти найменший елемент першого масиву, який також є у другому масиві.</p>
+        <p><strong>Завдання 2:</strong> Сортування бульбашкою.</p>
+
+        <div class="code-container">
+          <pre><code class="language-javascript">
+// --- Підзавдання 1: Пошук спільного мінімуму ---
+function findMinCommon(arr1, arr2) {
+    let minCommon = null;
+    
+    for (let num of arr1) {
+        // Якщо число є в другому масиві
+        if (arr2.includes(num)) {
+            if (minCommon === null || num < minCommon) {
+                minCommon = num;
+            }
+        }
+    }
+    return minCommon;
+}
+
+const arrayA = [15, 42, 8, 23, 4];
+const arrayB = [8, 55, 4, 23, 90];
+console.log("Масив 1:", arrayA);
+console.log("Масив 2:", arrayB);
+console.log("Найменший спільний:", findMinCommon(arrayA, arrayB)); // 4
+
+// --- Підзавдання 2: Сортування бульбашкою ---
+function bubbleSort(arr) {
+    let len = arr.length;
+    // Копіюємо масив, щоб не мутувати вихідний
+    let sortedArr = [...arr]; 
+    
+    for (let i = 0; i < len; i++) {
+        for (let j = 0; j < len - i - 1; j++) {
+            if (sortedArr[j] > sortedArr[j + 1]) {
+                let temp = sortedArr[j];
+                sortedArr[j] = sortedArr[j + 1];
+                sortedArr[j + 1] = temp;
+            }
+        }
+    }
+    return sortedArr;
+}
+
+const inputArr = [64, 34, 25, 12, 22, 11, 90];
+console.log("Вхідний масив:", inputArr);
+console.log("Відсортований масив:", bubbleSort(inputArr));
+          </code></pre>
+        </div>
+
+        <h3>Результат виконання (Console):</h3>
+        <div class="code-container" style="background: #000; color: #0f0; font-family: monospace;">
+            > "Масив 1:" [15, 42, 8, 23, 4]<br>
+            > "Масив 2:" [8, 55, 4, 23, 90]<br>
+            > "Найменший спільний:" 4<br>
+            --------------------------------<br>
+            > "Вхідний масив:" [64, 34, 25, 12, 22, 11, 90]<br>
+            > "Відсортований масив:" [11, 12, 22, 25, 34, 64, 90]
+        </div>
       </div>
 
       <div id="section6" class="lab-section">
-        <h2>ЗАВДАННЯ №5</h2>
-        <p>Тут буде інформація про завдання №5.</p>
+        <h2>ЗАВДАННЯ №5 (Варіант 8 - Будильник)</h2>
+        <p><strong>Завдання:</strong> Реалізувати програму-будильник. Функції: увімкнення-вимкнення, введення часу, повідомлення.</p>
+
+        <div style="border: 2px solid #0923f0; padding: 20px; border-radius: 10px; background: #f9f9f9; max-width: 400px; margin: 20px auto; text-align: center;">
+            <h3>⏰ Мій Будильник</h3>
+            <div id="clock-display" style="font-size: 32px; font-weight: bold; margin: 10px 0; font-family: monospace;">00:00:00</div>
+            
+            <label>Встановіть час:</label><br>
+            <input type="time" id="alarm-time" style="padding: 5px; font-size: 16px; margin: 10px 0;">
+            <br>
+            <button id="set-alarm-btn" onclick="setAlarm()" style="padding: 8px 15px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Увімкнути будильник</button>
+            <button onclick="stopAlarm()" style="padding: 8px 15px; background: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer;">Вимкнути</button>
+            <p id="alarm-status" style="color: gray; margin-top: 10px;">Будильник вимкнено</p>
+        </div>
+
+        <script>
+            let alarmTimeout;
+            const display = document.getElementById('clock-display');
+            const statusText = document.getElementById('alarm-status');
+
+            // Оновлення годинника щосекунди
+            setInterval(() => {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('uk-UA');
+                if(display) display.innerText = timeString;
+            }, 1000);
+
+            function setAlarm() {
+                const inputTime = document.getElementById('alarm-time').value;
+                if (!inputTime) {
+                    alert("Будь ласка, виберіть час!");
+                    return;
+                }
+
+                const now = new Date();
+                const alarm = new Date();
+                const [hours, minutes] = inputTime.split(':');
+                
+                alarm.setHours(hours);
+                alarm.setMinutes(minutes);
+                alarm.setSeconds(0);
+
+                // Якщо час вже минув сьогодні, ставимо на завтра
+                if (alarm < now) {
+                    alarm.setDate(alarm.getDate() + 1);
+                }
+
+                const timeToAlarm = alarm - now;
+
+                if(statusText) {
+                    statusText.innerText = `Будильник встановлено на ${hours}:${minutes}`;
+                    statusText.style.color = "green";
+                }
+                
+                console.log(`Alarm set for ${hours}:${minutes}`);
+
+                if (alarmTimeout) clearTimeout(alarmTimeout);
+                
+                alarmTimeout = setTimeout(() => {
+                    alert("⏰ ЧАС ПРОКИДАТИСЯ! ⏰");
+                    if(statusText) {
+                        statusText.innerText = "Будильник спрацював!";
+                        statusText.style.color = "red";
+                    }
+                    console.log("Alarm Triggered!");
+                }, timeToAlarm);
+            }
+
+            function stopAlarm() {
+                if (alarmTimeout) {
+                    clearTimeout(alarmTimeout);
+                    if(statusText) {
+                        statusText.innerText = "Будильник вимкнено";
+                        statusText.style.color = "gray";
+                    }
+                    console.log("Alarm Stopped");
+                }
+            }
+        </script>
+
+        <div class="code-container">
+            <pre><code class="language-javascript">
+// Логіка роботи будильника
+function setAlarm() {
+    const inputTime = document.getElementById('alarm-time').value;
+    const now = new Date();
+    const alarm = new Date();
+    const [hours, minutes] = inputTime.split(':');
+    
+    alarm.setHours(hours);
+    alarm.setMinutes(minutes);
+    alarm.setSeconds(0);
+
+    // Розрахунок часу до спрацювання
+    const timeToAlarm = alarm - now;
+    
+    console.log(`Alarm set for ${hours}:${minutes}`);
+
+    // Таймер спрацювання
+    setTimeout(() => {
+        alert("⏰ ЧАС ПРОКИДАТИСЯ! ⏰");
+        console.log("Alarm Triggered!");
+    }, timeToAlarm);
+}
+            </code></pre>
+        </div>
       </div>
 
       <div id="section7" class="lab-section">
         <h2>Висновки</h2>
-        <p>Тут буде підсумок виконаної лабораторної роботи №5.</p>
+        <p>Під час виконання лабораторної роботи №5 я:</p>
+        <ul>
+            <li>Ознайомився з синтаксисом та принципами роботи <strong>функцій</strong> у JavaScript (Function Declaration, передача параметрів, повернення значень).</li>
+            <li>Навчився працювати з <strong>умовними конструкціями</strong> (if/else) для реалізації логіки (перевірка балансу, пошук спам-слів).</li>
+            <li>Опанував роботу з <strong>масивами</strong>: перебір елементів, фільтрація, об'єднання масивів, сортування методом бульбашки.</li>
+            <li>Реалізував взаємодію з користувачем через <strong>DOM</strong> на прикладі створення інтерактивного будильника (робота з часом, таймерами <code>setTimeout</code>/<code>setInterval</code> та обробка подій).</li>
+        </ul>
       </div>
     </section>
   </main>

@@ -61,27 +61,110 @@
 
       <div id="section2" class="lab-section">
         <h2>Адаптивна верстка</h2>
-        <p>Тут буде інформація про адаптивну верстку.</p>
+        <p><strong>Завдання:</strong> Використовуючи медіа-запити (Media Queries) та CSS, виконати адаптивну верстку для трьох типів пристроїв.</p>
+        <p>Для реалізації обрано гнучкий макет на основі <strong>Flexbox</strong>. При зменшенні екрану кількість колонок буде змінюватися.</p>
+        
+        <div class="code-container">
+          <pre><code class="language-css">
+/* Базові стилі (Desktop First) */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: #007bff; /* Синій */
+    color: white;
+    padding: 20px;
+    flex: 1 1 22%; /* 4 колонки в ряд */
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* --- ПЛАНШЕТНА ВЕРСІЯ (max-width: 992px) --- */
+@media (max-width: 992px) {
+    .card {
+        flex: 1 1 45%; /* 2 колонки в ряд */
+        background: #ffc107; /* Змінюємо колір на жовтий */
+        color: black;
+    }
+}
+
+/* --- МОБІЛЬНА ВЕРСІЯ (max-width: 600px) --- */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+    .card {
+        flex: 1 1 100%; /* 1 колонка (на всю ширину) */
+        background: #28a745; /* Змінюємо колір на зелений */
+        color: white;
+    }
+}
+          </code></pre>
+        </div>
       </div>
 
       <div id="section3" class="lab-section">
         <h2>Десктопна версія</h2>
-        <p>Тут буде інформація про десктопну версію.</p>
+        <p><strong>Умова:</strong> Ширина екрану більше 992px.</p>
+        <p>Елементи розташовані в один рядок (4 колонки). Використовується базовий синій колір.</p>
+        
+        <div style="border: 2px solid #333; padding: 10px; width: 100%; overflow: auto;">
+            <p style="text-align: center; color: #555; font-size: 12px; margin-top: 0;">Імітація екрану PC (>992px)</p>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <div style="background: #007bff; color: white; padding: 20px; flex: 1; text-align: center; border-radius: 8px;">Блок 1</div>
+                <div style="background: #007bff; color: white; padding: 20px; flex: 1; text-align: center; border-radius: 8px;">Блок 2</div>
+                <div style="background: #007bff; color: white; padding: 20px; flex: 1; text-align: center; border-radius: 8px;">Блок 3</div>
+                <div style="background: #007bff; color: white; padding: 20px; flex: 1; text-align: center; border-radius: 8px;">Блок 4</div>
+            </div>
+        </div>
       </div>
 
       <div id="section4" class="lab-section">
         <h2>Планшетна версія</h2>
-        <p>Тут буде інформація про планшетну версію.</p>
+        <p><strong>Брейкпоінт:</strong> <code>@media (max-width: 992px)</code></p>
+        <p>Макети перебудовуються у 2 колонки. Колір блоків змінюється на жовтий для візуалізації зміни стану.</p>
+        
+        <div style="border: 2px solid #333; padding: 10px; max-width: 600px; margin: 0 auto; background: #f9f9f9;">
+            <p style="text-align: center; color: #555; font-size: 12px; margin-top: 0;">Імітація планшета (~768px)</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                <div style="background: #ffc107; color: black; padding: 20px; width: 45%; text-align: center; border-radius: 8px; box-sizing: border-box;">Блок 1</div>
+                <div style="background: #ffc107; color: black; padding: 20px; width: 45%; text-align: center; border-radius: 8px; box-sizing: border-box;">Блок 2</div>
+                <div style="background: #ffc107; color: black; padding: 20px; width: 45%; text-align: center; border-radius: 8px; box-sizing: border-box;">Блок 3</div>
+                <div style="background: #ffc107; color: black; padding: 20px; width: 45%; text-align: center; border-radius: 8px; box-sizing: border-box;">Блок 4</div>
+            </div>
+        </div>
       </div>
 
       <div id="section5" class="lab-section">
         <h2>Мобільна версія</h2>
-        <p>Тут буде інформація про мобільну версію.</p>
+        <p><strong>Брейкпоінт:</strong> <code>@media (max-width: 600px)</code></p>
+        <p>Елементи шикуються в одну колонку (stacking) один під одним, займаючи 100% ширини. Колір змінюється на зелений.</p>
+        
+        <div style="border: 10px solid #333; border-radius: 20px; padding: 10px; max-width: 300px; margin: 0 auto; background: white;">
+            <p style="text-align: center; color: #555; font-size: 12px; margin-top: 0;">Імітація мобільного (~320px)</p>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="background: #28a745; color: white; padding: 15px; width: 100%; text-align: center; border-radius: 8px; box-sizing: border-box;">Блок 1</div>
+                <div style="background: #28a745; color: white; padding: 15px; width: 100%; text-align: center; border-radius: 8px; box-sizing: border-box;">Блок 2</div>
+                <div style="background: #28a745; color: white; padding: 15px; width: 100%; text-align: center; border-radius: 8px; box-sizing: border-box;">Блок 3</div>
+                <div style="background: #28a745; color: white; padding: 15px; width: 100%; text-align: center; border-radius: 8px; box-sizing: border-box;">Блок 4</div>
+            </div>
+        </div>
       </div>
 
       <div id="section6" class="lab-section">
         <h2>Висновки</h2>
-        <p>Тут буде підсумок виконаної лабораторної роботи №4.</p>
+        <p>Під час виконання лабораторної роботи №4 я навчився:</p>
+        <ul>
+            <li>Використовувати <strong>CSS Media Queries</strong> (<code>@media</code>) для визначення правил стилізації залежно від ширини екрану.</li>
+            <li>Визначати <strong>брейкпоінти</strong> (контрольні точки) для перемикання між десктопною (<code>&gt;992px</code>), планшетною (<code>&lt;992px</code>) та мобільною (<code>&lt;600px</code>) версіями.</li>
+            <li>Створювати гнучкі макети (Fluid Layouts), які змінюють кількість колонок або структуру розташування блоків.</li>
+            <li>Розуміти різницю між відображенням контенту на великих моніторах та мобільних пристроях, що є основою сучасного <strong>Responsive Web Design</strong>.</li>
+        </ul>
+      </div>
       </div>
     </section>
   </main>
